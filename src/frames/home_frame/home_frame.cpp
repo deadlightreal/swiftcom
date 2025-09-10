@@ -25,8 +25,13 @@ frames::HomeFrame::HomeFrame() : wxFrame(nullptr, wxID_ANY, "Home Frame", wxDefa
     mainPanel->SetSizer(vSizer);
 }
 
-frames::HomeFrame::~HomeFrame() {
+frames::home_frame::panels::HostingPanel* frames::HomeFrame::GetHostingPanel() {
+    return this->hosting_panel;
+}
 
+frames::HomeFrame::~HomeFrame() {
+    delete this->menu_bar;
+    delete this->hosting_panel;
 }
     
 void frames::HomeFrame::Frame(wxTimerEvent& event) {

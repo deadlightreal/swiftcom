@@ -12,6 +12,8 @@ namespace frames {
         HomeFrame();
         ~HomeFrame();
         void Frame(wxTimerEvent& event);
+
+        frames::home_frame::panels::HostingPanel* GetHostingPanel();
     private:
         frames::home_frame::panels::HostingPanel* hosting_panel;
         widgets::MenuBar* menu_bar;

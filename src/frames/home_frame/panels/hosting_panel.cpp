@@ -36,3 +36,7 @@ void frames::home_frame::panels::HostingPanel::CreateNewServer(wxMouseEvent&) {
         objects::LocalServer(public_ip, random_generated_id)
     );
 }
+
+std::vector<objects::LocalServer>& frames::home_frame::panels::HostingPanel::GetLocalServers() {
+    return this->local_servers;
+}

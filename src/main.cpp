@@ -9,10 +9,7 @@ Application::Application() {
 
 Application::~Application() {
     delete this->home_frame;
-
-    if (this->GetLocalStorageDataManager() != nullptr) {
-        delete this->GetLocalStorageDataManager();
-    }
+    delete this->GetLocalStorageDataManager();
 }
 
 frames::HomeFrame* Application::GetHomeFrame() {
@@ -24,8 +21,11 @@ objects::LocalStorageDataManager* Application::GetLocalStorageDataManager() {
 }
 
 bool Application::OnInit() {
-    frames::HomeFrame* frame = new frames::HomeFrame();
-    frame->Show(true);
+    frames::HomeFrame* home_frame = this->GetHomeFrame();
+
+    this->local_storage_data_manager = new objects::LocalStorageDataManager(home_frame->GetHostingPanel()->GetLocalServers());
+
+    home_frame->Show(true);
     return true;
 }
 
