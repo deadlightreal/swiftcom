@@ -6,7 +6,7 @@ CXX_DEFINES = -DWXUSINGDLL -D_FILE_OFFSET_BITS=64 -D__WXMAC__ -D__WXOSX_COCOA__ 
 
 CXX_INCLUDES = -I/opt/homebrew/lib/wx/include/osx_cocoa-unicode-3.3 -I/opt/homebrew/include/cjson -I/opt/homebrew/include/wx-3.3
 
-CXX_FLAGSarm64 = -std=gnu++20 -arch arm64 -mmacosx-version-min=14.0
+CXX_FLAGSarm64 = -g -std=gnu++20 -arch arm64 -mmacosx-version-min=14.0
 
-CXX_FLAGS = -std=gnu++20 -arch arm64 -mmacosx-version-min=14.0
+CXX_FLAGS = -g -std=gnu++20 -arch arm64 -mmacosx-version-min=14.0
 

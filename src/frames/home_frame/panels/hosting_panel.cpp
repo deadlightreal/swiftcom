@@ -5,7 +5,11 @@
 #include "panels.hpp"
 #include "../../../widgets/widgets.hpp"
 
-frames::home_frame::panels::HostingPanel::HostingPanel(wxPanel* parent_panel) : wxPanel(parent_panel) {
+objects::LocalStorageDataManager* frames::home_frame::panels::HostingPanel::GetLocalStorageDataManager() {
+    return this->local_storage_data_manager;
+}
+
+frames::home_frame::panels::HostingPanel::HostingPanel(wxPanel* parent_panel, objects::LocalStorageDataManager* local_storage_data_manager) : wxPanel(parent_panel), local_storage_data_manager(local_storage_data_manager) {
     widgets::Button* create_new_server_button = new widgets::Button(this, "Create New Server", [this](wxMouseEvent& event) { this->CreateNewServer(event); });
     create_new_server_button->SetBackgroundColour(wxColour(255, 0, 0));
     create_new_server_button->SetMinSize(wxSize(-1, 40));
@@ -35,6 +39,8 @@ void frames::home_frame::panels::HostingPanel::CreateNewServer(wxMouseEvent&) {
     this->GetLocalServers().push_back(
         objects::LocalServer(public_ip, random_generated_id)
     );
+
+    this->GetLocalStorageDataManager()->save_data();
 }
 
 std::vector<objects::LocalServer>& frames::home_frame::panels::HostingPanel::GetLocalServers() {

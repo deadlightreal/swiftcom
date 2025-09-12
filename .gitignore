@@ -1,0 +1,13 @@
+.DS_Store
+
+/build/Makefile
+/build/CMakeCache.txt
+/build/cmake_install.cmake
+/build/CMakeFiles/
+
+/tests/Makefile
+/tests/CMakeCache.txt
+/tests/cmake_install.cmake
+/tests/CMakeFiles/
+
+*.dSYM/

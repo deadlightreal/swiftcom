@@ -1,3 +1,4 @@
+#include <iostream>
 #include <wx/wx.h>
 #include "frames/frames.hpp"
 #include "objects/objects.hpp"
@@ -8,8 +9,11 @@ Application::Application() {
 }
 
 Application::~Application() {
-    delete this->home_frame;
-    delete this->GetLocalStorageDataManager();
+    const objects::LocalStorageDataManager* local_storage_data_manager = this->GetLocalStorageDataManager();
+    
+    if (local_storage_data_manager != nullptr) {
+        delete local_storage_data_manager;
+    }
 }
 
 frames::HomeFrame* Application::GetHomeFrame() {
