@@ -5,6 +5,7 @@
 #include "panels/panels.hpp"
 #include "../frames.hpp"
 
+
 frames::HomeFrame::HomeFrame() : wxFrame(nullptr, wxID_ANY, "Home Frame", wxDefaultPosition, wxSize(800, 600)) {
     timer.SetOwner(this);
     Bind(wxEVT_TIMER, &HomeFrame::Frame, this);

@@ -988,4 +988,6 @@ CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/objects/loc
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__filesystem/recursive_directory_iterator.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__filesystem/u8path.h \
   /opt/homebrew/include/cjson/cJSON.h \
-  /Users/admin/Desktop/raw_sock_network_example/src/objects/../utils/file_system/file_system.hpp
+  /Users/admin/Desktop/raw_sock_network_example/src/objects/../utils/file_system/file_system.hpp \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/iostream \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/sstream

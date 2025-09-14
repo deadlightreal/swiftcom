@@ -7,15 +7,16 @@
 namespace frames::home_frame::panels {
     class HostingPanel : public wxPanel {
     public:
-        HostingPanel(wxPanel* parent_panel, objects::LocalStorageDataManager* local_storage_data_manager);
+        HostingPanel(wxPanel* parent_panel);
 
         std::vector<objects::LocalServer>& GetLocalServers();
 
-        objects::LocalStorageDataManager* GetLocalStorageDataManager();
+        void DrawServers();
     private:
         void CreateNewServer(wxMouseEvent&);
 
+        wxPanel* hosted_servers_panel;
+
         std::vector<objects::LocalServer> local_servers;
-        objects::LocalStorageDataManager* local_storage_data_manager;
     };
 }

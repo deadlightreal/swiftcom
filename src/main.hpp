@@ -19,3 +19,5 @@ private:
     frames::HomeFrame* home_frame;
     objects::LocalStorageDataManager* local_storage_data_manager;
 };
+
+wxDECLARE_APP(Application);

@@ -29,6 +29,8 @@ bool Application::OnInit() {
 
     this->local_storage_data_manager = new objects::LocalStorageDataManager(home_frame->GetHostingPanel()->GetLocalServers());
 
+    home_frame->GetHostingPanel()->DrawServers();
+
     home_frame->Show(true);
     return true;
 }

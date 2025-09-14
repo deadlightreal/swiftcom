@@ -2255,6 +2255,12 @@ CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/frames/home
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/16/include/stddef.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/16/include/stdint.h \
   /Users/admin/Desktop/raw_sock_network_example/src/objects/objects.hpp \
+  /Users/admin/Desktop/raw_sock_network_example/src/widgets/widgets.hpp \
+  /Users/admin/Desktop/raw_sock_network_example/src/frames/frames.hpp \
+  /Users/admin/Desktop/raw_sock_network_example/src/objects/objects.hpp \
+  /Users/admin/Desktop/raw_sock_network_example/src/frames/home_frame/panels/panels.hpp \
+  /Users/admin/Desktop/raw_sock_network_example/src/main.hpp \
+  /Users/admin/Desktop/raw_sock_network_example/src/objects/objects.hpp \
   /Users/admin/Desktop/raw_sock_network_example/src/utils/crypto/crypto.hpp \
   /Users/admin/Desktop/raw_sock_network_example/src/utils/net/net.hpp \
   /Users/admin/Desktop/raw_sock_network_example/src/widgets/widgets.hpp \
@@ -5518,6 +5524,7 @@ CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/objects/loc
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/iomanip \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/ios \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/iosfwd \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/iostream \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/istream \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/iterator \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/limits \
@@ -5532,6 +5539,7 @@ CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/objects/loc
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/print \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/queue \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/ratio \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/sstream \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/stack \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/stddef.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/stdexcept \
@@ -11748,6 +11756,8 @@ CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/widgets/men
 /opt/homebrew/include/wx-3.3/wx/statusbr.h:
 
 /opt/homebrew/include/wx-3.3/wx/sharedptr.h:
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/sstream:
 
 /opt/homebrew/include/wx-3.3/wx/region.h:
 

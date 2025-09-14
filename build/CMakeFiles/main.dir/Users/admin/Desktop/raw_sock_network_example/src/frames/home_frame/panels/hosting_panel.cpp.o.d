@@ -1204,7 +1204,11 @@ CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/frames/home
   /opt/homebrew/include/wx-3.3/wx/osx/filedlg.h \
   /opt/homebrew/include/wx-3.3/wx/mdi.h \
   /opt/homebrew/include/wx-3.3/wx/osx/mdi.h \
-  /Users/admin/Desktop/raw_sock_network_example/src/frames/home_frame/panels/../../../utils/net/net.hpp \
+  /Users/admin/Desktop/raw_sock_network_example/src/frames/home_frame/panels/../../../main.hpp \
+  /Users/admin/Desktop/raw_sock_network_example/src/frames/home_frame/panels/../../../frames/frames.hpp \
+  /Users/admin/Desktop/raw_sock_network_example/src/frames/home_frame/panels/../../../frames/../widgets/widgets.hpp \
+  /Users/admin/Desktop/raw_sock_network_example/src/frames/home_frame/panels/../../../frames/home_frame/panels/panels.hpp \
+  /Users/admin/Desktop/raw_sock_network_example/src/frames/home_frame/panels/../../../frames/home_frame/panels/../../../objects/objects.hpp \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/arpa/inet.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/netinet/in.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/socket.h \
@@ -1216,9 +1220,6 @@ CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/frames/home
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_socklen_t.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_iovec_t.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/netinet6/in6.h \
-  /Users/admin/Desktop/raw_sock_network_example/src/frames/home_frame/panels/../../../utils/crypto/crypto.hpp \
-  /Users/admin/Desktop/raw_sock_network_example/src/frames/home_frame/panels/panels.hpp \
-  /Users/admin/Desktop/raw_sock_network_example/src/frames/home_frame/panels/../../../objects/objects.hpp \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/fstream \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/filesystem \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__filesystem/copy_options.h \
@@ -1240,4 +1241,9 @@ CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/frames/home
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__filesystem/recursive_directory_iterator.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__filesystem/u8path.h \
   /opt/homebrew/include/cjson/cJSON.h \
+  /Users/admin/Desktop/raw_sock_network_example/src/frames/home_frame/panels/../../../frames/../objects/objects.hpp \
+  /Users/admin/Desktop/raw_sock_network_example/src/frames/home_frame/panels/../../../objects/objects.hpp \
+  /Users/admin/Desktop/raw_sock_network_example/src/frames/home_frame/panels/../../../utils/net/net.hpp \
+  /Users/admin/Desktop/raw_sock_network_example/src/frames/home_frame/panels/../../../utils/crypto/crypto.hpp \
+  /Users/admin/Desktop/raw_sock_network_example/src/frames/home_frame/panels/panels.hpp \
   /Users/admin/Desktop/raw_sock_network_example/src/frames/home_frame/panels/../../../widgets/widgets.hpp

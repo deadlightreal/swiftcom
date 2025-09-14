@@ -15,6 +15,7 @@ set(wxWidgets_INCLUDE_DIRS
     /opt/homebrew/lib/wx/include/osx_cocoa-unicode-3.3
     /opt/homebrew/include/cjson
     /opt/homebrew/include/wx-3.3
+    /opt/homebrew/lib
 )
 
 link_directories(/opt/homebrew/lib)
@@ -28,6 +29,7 @@ set(wxWidgets_LIBRARIES
     wx_baseu_xml-3.3
     wx_baseu_net-3.3
     wx_baseu-3.3
+    cjson
 )
 
 # Frameworks needed on macOS

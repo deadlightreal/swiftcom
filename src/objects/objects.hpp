@@ -3,6 +3,7 @@
 #include <arpa/inet.h>
 #include <cstdint>
 #include <fstream>
+#include <netinet/in.h>
 #include <vector>
 #include <cJSON.h>
 
@@ -16,6 +17,9 @@ namespace objects {
 
         LocalServerParsedData parse();
         LocalServer(in_addr ip_address, uint32_t id);
+
+        in_addr GetIpAddress();
+        uint32_t GetServerId();
     private:
         in_addr ip_address;
         uint32_t id;
@@ -35,9 +39,9 @@ namespace objects {
 
         void save_data();
         void load_data();
+
+        LocalStorageSavedData& GetSavedData();
     private:
         LocalStorageSavedData saved_data;
-
-        std::fstream application_data_file;
     };
 }
