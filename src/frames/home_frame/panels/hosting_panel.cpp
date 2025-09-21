@@ -1,3 +1,6 @@
+#include <array>
+#include <cstdint>
+#include <cstring>
 #include <functional>
 #include <string>
 #include <wx/wx.h>
@@ -40,16 +43,41 @@ void frames::home_frame::panels::HostingPanel::DrawServers() {
     this->hosted_servers_panel->SetSizer(v_sizer);
 
     for (auto &server : wxGetApp().GetLocalStorageDataManager()->GetSavedData().local_servers) {
+        wxBoxSizer* button_alignment_sizer = new wxBoxSizer(wxHORIZONTAL);
+
+        std::array<uint8_t, 8> invitation_data;
+
+        in_addr server_ip_address = server.GetIpAddress();
+        uint32_t server_id = server.GetServerId();
+
+        memcpy(&invitation_data[0], &server_ip_address, sizeof(in_addr));
+        memcpy(&invitation_data[4], &server_id, sizeof(uint32_t));
+
+        std::string invitation_code = utils::crypto::base32_encode(invitation_data);
+
+        std::cout << "Invitation code: " << invitation_code << std::endl;
+
+        std::string server_button_string = std::to_string(server_id);
+        server_button_string += "   ";
+        server_button_string += invitation_code;
+
+        widgets::StyledPanel* server_panel = new widgets::StyledPanel(this->hosted_servers_panel);
+        server_panel->SetMinSize(wxSize(-1, 30));
+
         wxBoxSizer* button_sizer = new wxBoxSizer(wxHORIZONTAL);
 
-        widgets::Button* server_button = new widgets::Button(this->hosted_servers_panel, std::to_string(server.GetServerId()).c_str(), nullptr);
-        server_button->SetMinSize(wxSize(-1, 30));
+        wxStaticText* button_invitation_code_text = new wxStaticText(server_panel, wxID_ANY, invitation_code);
 
-        button_sizer->AddStretchSpacer(1);
-        button_sizer->Add(server_button, 4, wxEXPAND);
-        button_sizer->AddStretchSpacer(1);
+        button_sizer->Add(button_invitation_code_text, 4, wxEXPAND | wxALIGN_CENTER_VERTICAL | wxALL);
+        button_sizer->AddStretchSpacer(10);
 
-        v_sizer->Add(button_sizer, 0, wxEXPAND | wxALL, 10);
+        button_alignment_sizer->AddStretchSpacer(1);
+        button_alignment_sizer->Add(server_panel, 4, wxEXPAND);
+        button_alignment_sizer->AddStretchSpacer(1);
+
+        server_panel->SetSizer(button_sizer);
+
+        v_sizer->Add(button_alignment_sizer, 0, wxEXPAND | wxALL, 10);
 
         v_sizer->AddStretchSpacer(1);
     }

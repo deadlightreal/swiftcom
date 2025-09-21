@@ -34,4 +34,12 @@ namespace widgets {
     private:
         uint32_t current_index = 0;
     };
+
+    class StyledPanel : public wxPanel {
+    public:
+        StyledPanel(wxWindow* parent);
+        
+        void OnPaint(wxPaintEvent&);
+    private:
+    };
 }

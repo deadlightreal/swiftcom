@@ -177,6 +177,30 @@ Users/admin/Desktop/raw_sock_network_example/src/frames/home_frame/panels/hostin
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/frames/home_frame/panels/hosting_panel.cpp.s
 .PHONY : Users/admin/Desktop/raw_sock_network_example/src/frames/home_frame/panels/hosting_panel.cpp.s
 
+Users/admin/Desktop/raw_sock_network_example/src/frames/home_frame/panels/servers_panel.o: Users/admin/Desktop/raw_sock_network_example/src/frames/home_frame/panels/servers_panel.cpp.o
+.PHONY : Users/admin/Desktop/raw_sock_network_example/src/frames/home_frame/panels/servers_panel.o
+
+# target to build an object file
+Users/admin/Desktop/raw_sock_network_example/src/frames/home_frame/panels/servers_panel.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/frames/home_frame/panels/servers_panel.cpp.o
+.PHONY : Users/admin/Desktop/raw_sock_network_example/src/frames/home_frame/panels/servers_panel.cpp.o
+
+Users/admin/Desktop/raw_sock_network_example/src/frames/home_frame/panels/servers_panel.i: Users/admin/Desktop/raw_sock_network_example/src/frames/home_frame/panels/servers_panel.cpp.i
+.PHONY : Users/admin/Desktop/raw_sock_network_example/src/frames/home_frame/panels/servers_panel.i
+
+# target to preprocess a source file
+Users/admin/Desktop/raw_sock_network_example/src/frames/home_frame/panels/servers_panel.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/frames/home_frame/panels/servers_panel.cpp.i
+.PHONY : Users/admin/Desktop/raw_sock_network_example/src/frames/home_frame/panels/servers_panel.cpp.i
+
+Users/admin/Desktop/raw_sock_network_example/src/frames/home_frame/panels/servers_panel.s: Users/admin/Desktop/raw_sock_network_example/src/frames/home_frame/panels/servers_panel.cpp.s
+.PHONY : Users/admin/Desktop/raw_sock_network_example/src/frames/home_frame/panels/servers_panel.s
+
+# target to generate assembly for a file
+Users/admin/Desktop/raw_sock_network_example/src/frames/home_frame/panels/servers_panel.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/frames/home_frame/panels/servers_panel.cpp.s
+.PHONY : Users/admin/Desktop/raw_sock_network_example/src/frames/home_frame/panels/servers_panel.cpp.s
+
 Users/admin/Desktop/raw_sock_network_example/src/main.o: Users/admin/Desktop/raw_sock_network_example/src/main.cpp.o
 .PHONY : Users/admin/Desktop/raw_sock_network_example/src/main.o
 
@@ -393,6 +417,30 @@ Users/admin/Desktop/raw_sock_network_example/src/widgets/menu_bar.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/widgets/menu_bar.cpp.s
 .PHONY : Users/admin/Desktop/raw_sock_network_example/src/widgets/menu_bar.cpp.s
 
+Users/admin/Desktop/raw_sock_network_example/src/widgets/styled_panel.o: Users/admin/Desktop/raw_sock_network_example/src/widgets/styled_panel.cpp.o
+.PHONY : Users/admin/Desktop/raw_sock_network_example/src/widgets/styled_panel.o
+
+# target to build an object file
+Users/admin/Desktop/raw_sock_network_example/src/widgets/styled_panel.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/widgets/styled_panel.cpp.o
+.PHONY : Users/admin/Desktop/raw_sock_network_example/src/widgets/styled_panel.cpp.o
+
+Users/admin/Desktop/raw_sock_network_example/src/widgets/styled_panel.i: Users/admin/Desktop/raw_sock_network_example/src/widgets/styled_panel.cpp.i
+.PHONY : Users/admin/Desktop/raw_sock_network_example/src/widgets/styled_panel.i
+
+# target to preprocess a source file
+Users/admin/Desktop/raw_sock_network_example/src/widgets/styled_panel.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/widgets/styled_panel.cpp.i
+.PHONY : Users/admin/Desktop/raw_sock_network_example/src/widgets/styled_panel.cpp.i
+
+Users/admin/Desktop/raw_sock_network_example/src/widgets/styled_panel.s: Users/admin/Desktop/raw_sock_network_example/src/widgets/styled_panel.cpp.s
+.PHONY : Users/admin/Desktop/raw_sock_network_example/src/widgets/styled_panel.s
+
+# target to generate assembly for a file
+Users/admin/Desktop/raw_sock_network_example/src/widgets/styled_panel.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/widgets/styled_panel.cpp.s
+.PHONY : Users/admin/Desktop/raw_sock_network_example/src/widgets/styled_panel.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -408,6 +456,9 @@ help:
 	@echo "... Users/admin/Desktop/raw_sock_network_example/src/frames/home_frame/panels/hosting_panel.o"
 	@echo "... Users/admin/Desktop/raw_sock_network_example/src/frames/home_frame/panels/hosting_panel.i"
 	@echo "... Users/admin/Desktop/raw_sock_network_example/src/frames/home_frame/panels/hosting_panel.s"
+	@echo "... Users/admin/Desktop/raw_sock_network_example/src/frames/home_frame/panels/servers_panel.o"
+	@echo "... Users/admin/Desktop/raw_sock_network_example/src/frames/home_frame/panels/servers_panel.i"
+	@echo "... Users/admin/Desktop/raw_sock_network_example/src/frames/home_frame/panels/servers_panel.s"
 	@echo "... Users/admin/Desktop/raw_sock_network_example/src/main.o"
 	@echo "... Users/admin/Desktop/raw_sock_network_example/src/main.i"
 	@echo "... Users/admin/Desktop/raw_sock_network_example/src/main.s"
@@ -435,6 +486,9 @@ help:
 	@echo "... Users/admin/Desktop/raw_sock_network_example/src/widgets/menu_bar.o"
 	@echo "... Users/admin/Desktop/raw_sock_network_example/src/widgets/menu_bar.i"
 	@echo "... Users/admin/Desktop/raw_sock_network_example/src/widgets/menu_bar.s"
+	@echo "... Users/admin/Desktop/raw_sock_network_example/src/widgets/styled_panel.o"
+	@echo "... Users/admin/Desktop/raw_sock_network_example/src/widgets/styled_panel.i"
+	@echo "... Users/admin/Desktop/raw_sock_network_example/src/widgets/styled_panel.s"
 .PHONY : help
 
 

@@ -100,10 +100,24 @@ CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/frames/home
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/frames/home_frame/panels/hosting_panel.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/admin/Desktop/raw_sock_network_example/src/frames/home_frame/panels/hosting_panel.cpp -o CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/frames/home_frame/panels/hosting_panel.cpp.s
 
+CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/frames/home_frame/panels/servers_panel.cpp.o: CMakeFiles/main.dir/flags.make
+CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/frames/home_frame/panels/servers_panel.cpp.o: /Users/admin/Desktop/raw_sock_network_example/src/frames/home_frame/panels/servers_panel.cpp
+CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/frames/home_frame/panels/servers_panel.cpp.o: CMakeFiles/main.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/admin/Desktop/raw_sock_network_example/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/frames/home_frame/panels/servers_panel.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/frames/home_frame/panels/servers_panel.cpp.o -MF CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/frames/home_frame/panels/servers_panel.cpp.o.d -o CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/frames/home_frame/panels/servers_panel.cpp.o -c /Users/admin/Desktop/raw_sock_network_example/src/frames/home_frame/panels/servers_panel.cpp
+
+CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/frames/home_frame/panels/servers_panel.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/frames/home_frame/panels/servers_panel.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/admin/Desktop/raw_sock_network_example/src/frames/home_frame/panels/servers_panel.cpp > CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/frames/home_frame/panels/servers_panel.cpp.i
+
+CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/frames/home_frame/panels/servers_panel.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/frames/home_frame/panels/servers_panel.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/admin/Desktop/raw_sock_network_example/src/frames/home_frame/panels/servers_panel.cpp -o CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/frames/home_frame/panels/servers_panel.cpp.s
+
 CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/main.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/main.cpp.o: /Users/admin/Desktop/raw_sock_network_example/src/main.cpp
 CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/main.cpp.o: CMakeFiles/main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/admin/Desktop/raw_sock_network_example/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/main.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/admin/Desktop/raw_sock_network_example/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/main.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/main.cpp.o -MF CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/main.cpp.o.d -o CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/main.cpp.o -c /Users/admin/Desktop/raw_sock_network_example/src/main.cpp
 
 CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/main.cpp.i: cmake_force
@@ -117,7 +131,7 @@ CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/main.cpp.s:
 CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/objects/local_server.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/objects/local_server.cpp.o: /Users/admin/Desktop/raw_sock_network_example/src/objects/local_server.cpp
 CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/objects/local_server.cpp.o: CMakeFiles/main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/admin/Desktop/raw_sock_network_example/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/objects/local_server.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/admin/Desktop/raw_sock_network_example/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/objects/local_server.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/objects/local_server.cpp.o -MF CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/objects/local_server.cpp.o.d -o CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/objects/local_server.cpp.o -c /Users/admin/Desktop/raw_sock_network_example/src/objects/local_server.cpp
 
 CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/objects/local_server.cpp.i: cmake_force
@@ -131,7 +145,7 @@ CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/objects/loc
 CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/objects/local_storage_data_manager.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/objects/local_storage_data_manager.cpp.o: /Users/admin/Desktop/raw_sock_network_example/src/objects/local_storage_data_manager.cpp
 CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/objects/local_storage_data_manager.cpp.o: CMakeFiles/main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/admin/Desktop/raw_sock_network_example/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/objects/local_storage_data_manager.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/admin/Desktop/raw_sock_network_example/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/objects/local_storage_data_manager.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/objects/local_storage_data_manager.cpp.o -MF CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/objects/local_storage_data_manager.cpp.o.d -o CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/objects/local_storage_data_manager.cpp.o -c /Users/admin/Desktop/raw_sock_network_example/src/objects/local_storage_data_manager.cpp
 
 CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/objects/local_storage_data_manager.cpp.i: cmake_force
@@ -145,7 +159,7 @@ CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/objects/loc
 CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/utils/crypto/base32_decoding.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/utils/crypto/base32_decoding.cpp.o: /Users/admin/Desktop/raw_sock_network_example/src/utils/crypto/base32_decoding.cpp
 CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/utils/crypto/base32_decoding.cpp.o: CMakeFiles/main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/admin/Desktop/raw_sock_network_example/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/utils/crypto/base32_decoding.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/admin/Desktop/raw_sock_network_example/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/utils/crypto/base32_decoding.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/utils/crypto/base32_decoding.cpp.o -MF CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/utils/crypto/base32_decoding.cpp.o.d -o CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/utils/crypto/base32_decoding.cpp.o -c /Users/admin/Desktop/raw_sock_network_example/src/utils/crypto/base32_decoding.cpp
 
 CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/utils/crypto/base32_decoding.cpp.i: cmake_force
@@ -159,7 +173,7 @@ CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/utils/crypt
 CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/utils/crypto/base32_encoding.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/utils/crypto/base32_encoding.cpp.o: /Users/admin/Desktop/raw_sock_network_example/src/utils/crypto/base32_encoding.cpp
 CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/utils/crypto/base32_encoding.cpp.o: CMakeFiles/main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/admin/Desktop/raw_sock_network_example/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/utils/crypto/base32_encoding.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/admin/Desktop/raw_sock_network_example/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/utils/crypto/base32_encoding.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/utils/crypto/base32_encoding.cpp.o -MF CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/utils/crypto/base32_encoding.cpp.o.d -o CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/utils/crypto/base32_encoding.cpp.o -c /Users/admin/Desktop/raw_sock_network_example/src/utils/crypto/base32_encoding.cpp
 
 CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/utils/crypto/base32_encoding.cpp.i: cmake_force
@@ -173,7 +187,7 @@ CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/utils/crypt
 CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/utils/file_system/application_directory.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/utils/file_system/application_directory.cpp.o: /Users/admin/Desktop/raw_sock_network_example/src/utils/file_system/application_directory.cpp
 CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/utils/file_system/application_directory.cpp.o: CMakeFiles/main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/admin/Desktop/raw_sock_network_example/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/utils/file_system/application_directory.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/admin/Desktop/raw_sock_network_example/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/utils/file_system/application_directory.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/utils/file_system/application_directory.cpp.o -MF CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/utils/file_system/application_directory.cpp.o.d -o CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/utils/file_system/application_directory.cpp.o -c /Users/admin/Desktop/raw_sock_network_example/src/utils/file_system/application_directory.cpp
 
 CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/utils/file_system/application_directory.cpp.i: cmake_force
@@ -187,7 +201,7 @@ CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/utils/file_
 CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/utils/net/get_public_ip.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/utils/net/get_public_ip.cpp.o: /Users/admin/Desktop/raw_sock_network_example/src/utils/net/get_public_ip.cpp
 CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/utils/net/get_public_ip.cpp.o: CMakeFiles/main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/admin/Desktop/raw_sock_network_example/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/utils/net/get_public_ip.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/admin/Desktop/raw_sock_network_example/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/utils/net/get_public_ip.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/utils/net/get_public_ip.cpp.o -MF CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/utils/net/get_public_ip.cpp.o.d -o CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/utils/net/get_public_ip.cpp.o -c /Users/admin/Desktop/raw_sock_network_example/src/utils/net/get_public_ip.cpp
 
 CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/utils/net/get_public_ip.cpp.i: cmake_force
@@ -201,7 +215,7 @@ CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/utils/net/g
 CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/widgets/button.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/widgets/button.cpp.o: /Users/admin/Desktop/raw_sock_network_example/src/widgets/button.cpp
 CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/widgets/button.cpp.o: CMakeFiles/main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/admin/Desktop/raw_sock_network_example/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/widgets/button.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/admin/Desktop/raw_sock_network_example/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/widgets/button.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/widgets/button.cpp.o -MF CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/widgets/button.cpp.o.d -o CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/widgets/button.cpp.o -c /Users/admin/Desktop/raw_sock_network_example/src/widgets/button.cpp
 
 CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/widgets/button.cpp.i: cmake_force
@@ -215,7 +229,7 @@ CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/widgets/but
 CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/widgets/menu_bar.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/widgets/menu_bar.cpp.o: /Users/admin/Desktop/raw_sock_network_example/src/widgets/menu_bar.cpp
 CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/widgets/menu_bar.cpp.o: CMakeFiles/main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/admin/Desktop/raw_sock_network_example/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/widgets/menu_bar.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/admin/Desktop/raw_sock_network_example/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/widgets/menu_bar.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/widgets/menu_bar.cpp.o -MF CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/widgets/menu_bar.cpp.o.d -o CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/widgets/menu_bar.cpp.o -c /Users/admin/Desktop/raw_sock_network_example/src/widgets/menu_bar.cpp
 
 CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/widgets/menu_bar.cpp.i: cmake_force
@@ -226,10 +240,25 @@ CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/widgets/men
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/widgets/menu_bar.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/admin/Desktop/raw_sock_network_example/src/widgets/menu_bar.cpp -o CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/widgets/menu_bar.cpp.s
 
+CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/widgets/styled_panel.cpp.o: CMakeFiles/main.dir/flags.make
+CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/widgets/styled_panel.cpp.o: /Users/admin/Desktop/raw_sock_network_example/src/widgets/styled_panel.cpp
+CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/widgets/styled_panel.cpp.o: CMakeFiles/main.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/admin/Desktop/raw_sock_network_example/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/widgets/styled_panel.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/widgets/styled_panel.cpp.o -MF CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/widgets/styled_panel.cpp.o.d -o CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/widgets/styled_panel.cpp.o -c /Users/admin/Desktop/raw_sock_network_example/src/widgets/styled_panel.cpp
+
+CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/widgets/styled_panel.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/widgets/styled_panel.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/admin/Desktop/raw_sock_network_example/src/widgets/styled_panel.cpp > CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/widgets/styled_panel.cpp.i
+
+CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/widgets/styled_panel.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/widgets/styled_panel.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/admin/Desktop/raw_sock_network_example/src/widgets/styled_panel.cpp -o CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/widgets/styled_panel.cpp.s
+
 # Object files for target main
 main_OBJECTS = \
 "CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/frames/home_frame/home_frame.cpp.o" \
 "CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/frames/home_frame/panels/hosting_panel.cpp.o" \
+"CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/frames/home_frame/panels/servers_panel.cpp.o" \
 "CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/main.cpp.o" \
 "CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/objects/local_server.cpp.o" \
 "CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/objects/local_storage_data_manager.cpp.o" \
@@ -238,13 +267,15 @@ main_OBJECTS = \
 "CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/utils/file_system/application_directory.cpp.o" \
 "CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/utils/net/get_public_ip.cpp.o" \
 "CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/widgets/button.cpp.o" \
-"CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/widgets/menu_bar.cpp.o"
+"CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/widgets/menu_bar.cpp.o" \
+"CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/widgets/styled_panel.cpp.o"
 
 # External object files for target main
 main_EXTERNAL_OBJECTS =
 
 output/main: CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/frames/home_frame/home_frame.cpp.o
 output/main: CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/frames/home_frame/panels/hosting_panel.cpp.o
+output/main: CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/frames/home_frame/panels/servers_panel.cpp.o
 output/main: CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/main.cpp.o
 output/main: CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/objects/local_server.cpp.o
 output/main: CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/objects/local_storage_data_manager.cpp.o
@@ -254,9 +285,10 @@ output/main: CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/sr
 output/main: CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/utils/net/get_public_ip.cpp.o
 output/main: CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/widgets/button.cpp.o
 output/main: CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/widgets/menu_bar.cpp.o
+output/main: CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/widgets/styled_panel.cpp.o
 output/main: CMakeFiles/main.dir/build.make
 output/main: CMakeFiles/main.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/admin/Desktop/raw_sock_network_example/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Linking CXX executable output/main"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/admin/Desktop/raw_sock_network_example/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Linking CXX executable output/main"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/main.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

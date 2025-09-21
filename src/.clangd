@@ -5,6 +5,7 @@ CompileFlags:
         - "c++"
         - "-I/opt/homebrew/include/cjson"
         - "-I/opt/homebrew/include/wx-3.3"
+        - "-I/opt/homebrew/Cellar/sqlite/3.50.4/include"
         - "-I/opt/homebrew/lib/wx/include/osx_cocoa-unicode-3.3"
         - "-D_FILE_OFFSET_BITS=64"
         - "-DwxDEBUG_LEVEL=0"

@@ -3,6 +3,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/frames/home_frame/home_frame.cpp.o.d"
   "CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/frames/home_frame/panels/hosting_panel.cpp.o"
   "CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/frames/home_frame/panels/hosting_panel.cpp.o.d"
+  "CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/frames/home_frame/panels/servers_panel.cpp.o"
+  "CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/frames/home_frame/panels/servers_panel.cpp.o.d"
   "CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/main.cpp.o"
   "CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/main.cpp.o.d"
   "CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/objects/local_server.cpp.o"
@@ -21,6 +23,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/widgets/button.cpp.o.d"
   "CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/widgets/menu_bar.cpp.o"
   "CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/widgets/menu_bar.cpp.o.d"
+  "CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/widgets/styled_panel.cpp.o"
+  "CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/widgets/styled_panel.cpp.o.d"
   "output/main"
   "output/main.pdb"
 )

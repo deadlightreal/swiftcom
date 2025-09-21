@@ -10,6 +10,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/Users/admin/Desktop/raw_sock_network_example/src/frames/home_frame/home_frame.cpp" "CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/frames/home_frame/home_frame.cpp.o" "gcc" "CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/frames/home_frame/home_frame.cpp.o.d"
   "/Users/admin/Desktop/raw_sock_network_example/src/frames/home_frame/panels/hosting_panel.cpp" "CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/frames/home_frame/panels/hosting_panel.cpp.o" "gcc" "CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/frames/home_frame/panels/hosting_panel.cpp.o.d"
+  "/Users/admin/Desktop/raw_sock_network_example/src/frames/home_frame/panels/servers_panel.cpp" "CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/frames/home_frame/panels/servers_panel.cpp.o" "gcc" "CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/frames/home_frame/panels/servers_panel.cpp.o.d"
   "/Users/admin/Desktop/raw_sock_network_example/src/main.cpp" "CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/main.cpp.o" "gcc" "CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/main.cpp.o.d"
   "/Users/admin/Desktop/raw_sock_network_example/src/objects/local_server.cpp" "CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/objects/local_server.cpp.o" "gcc" "CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/objects/local_server.cpp.o.d"
   "/Users/admin/Desktop/raw_sock_network_example/src/objects/local_storage_data_manager.cpp" "CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/objects/local_storage_data_manager.cpp.o" "gcc" "CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/objects/local_storage_data_manager.cpp.o.d"
@@ -19,6 +20,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/Users/admin/Desktop/raw_sock_network_example/src/utils/net/get_public_ip.cpp" "CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/utils/net/get_public_ip.cpp.o" "gcc" "CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/utils/net/get_public_ip.cpp.o.d"
   "/Users/admin/Desktop/raw_sock_network_example/src/widgets/button.cpp" "CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/widgets/button.cpp.o" "gcc" "CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/widgets/button.cpp.o.d"
   "/Users/admin/Desktop/raw_sock_network_example/src/widgets/menu_bar.cpp" "CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/widgets/menu_bar.cpp.o" "gcc" "CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/widgets/menu_bar.cpp.o.d"
+  "/Users/admin/Desktop/raw_sock_network_example/src/widgets/styled_panel.cpp" "CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/widgets/styled_panel.cpp.o" "gcc" "CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/widgets/styled_panel.cpp.o.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

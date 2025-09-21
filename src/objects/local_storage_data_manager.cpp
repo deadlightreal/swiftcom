@@ -10,6 +10,7 @@
 #include <string>
 #include <filesystem>
 #include <cJSON.h>
+#include <sqlite3.h>
 
 std::string directory_location;
 
