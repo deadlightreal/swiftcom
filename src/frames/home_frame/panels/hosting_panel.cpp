@@ -42,16 +42,17 @@ void frames::home_frame::panels::HostingPanel::DrawServers() {
 
     this->hosted_servers_panel->SetSizer(v_sizer);
 
-    for (auto &server : wxGetApp().GetLocalStorageDataManager()->GetSavedData().local_servers) {
+    in_addr public_ip_address = utils::net::get_public_ip();
+
+    for (auto &server : wxGetApp().GetLocalStorageDataManager()->GetSavedData().hosted_servers) {
         wxBoxSizer* button_alignment_sizer = new wxBoxSizer(wxHORIZONTAL);
 
         std::array<uint8_t, 8> invitation_data;
 
-        in_addr server_ip_address = server.GetIpAddress();
         uint32_t server_id = server.GetServerId();
 
-        memcpy(&invitation_data[0], &server_ip_address, sizeof(in_addr));
-        memcpy(&invitation_data[4], &server_id, sizeof(uint32_t));
+        memcpy(&invitation_data[0], &public_ip_address, sizeof(public_ip_address));
+        memcpy(&invitation_data[4], &server_id, sizeof(server_id));
 
         std::string invitation_code = utils::crypto::base32_encode(invitation_data);
 
@@ -82,23 +83,15 @@ void frames::home_frame::panels::HostingPanel::DrawServers() {
         v_sizer->AddStretchSpacer(1);
     }
 
-    this->hosted_servers_panel->Layout();
+    this->hosted_servers_panel->GetParent()->Layout();
+    this->hosted_servers_panel->GetParent()->Refresh();
+    this->hosted_servers_panel->GetParent()->SendSizeEvent();
 }
 
 void frames::home_frame::panels::HostingPanel::CreateNewServer(wxMouseEvent&) {
-    struct in_addr public_ip = utils::net::get_public_ip();
-
     uint32_t random_generated_id = rand();
 
-    this->GetLocalServers().push_back(
-        objects::LocalServer(public_ip, random_generated_id)
-    );
-
-    wxGetApp().GetLocalStorageDataManager()->save_data();
+    wxGetApp().GetLocalStorageDataManager()->InsertHostedServer(random_generated_id);
 
     this->DrawServers();
-}
-
-std::vector<objects::LocalServer>& frames::home_frame::panels::HostingPanel::GetLocalServers() {
-    return this->local_servers;
 }

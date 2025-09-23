@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = -DWXUSINGDLL -D_FILE_OFFSET_BITS=64 -D__WXMAC__ -D__WXOSX_COCOA__ -D__WXOSX__ -DwxDEBUG_LEVEL=0
 
-CXX_INCLUDES = -I/opt/homebrew/lib/wx/include/osx_cocoa-unicode-3.3 -I/opt/homebrew/include/cjson -I/opt/homebrew/include/wx-3.3 -I/opt/homebrew/lib
+CXX_INCLUDES = -I/opt/homebrew/lib/wx/include/osx_cocoa-unicode-3.3 -I/opt/homebrew/Cellar/sqlite/3.50.4/include -I/opt/homebrew/include/cjson -I/opt/homebrew/include/wx-3.3 -I/opt/homebrew/lib -I/opt/homebrew/Cellar/sqlite/3.50.4/lib
 
 CXX_FLAGSarm64 = -g -std=gnu++20 -arch arm64 -mmacosx-version-min=14.0
 

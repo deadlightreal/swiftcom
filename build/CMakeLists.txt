@@ -13,9 +13,11 @@ set(CMAKE_OSX_DEPLOYMENT_TARGET "14.0")
 # Set wxWidgets include directories
 set(wxWidgets_INCLUDE_DIRS 
     /opt/homebrew/lib/wx/include/osx_cocoa-unicode-3.3
+    /opt/homebrew/Cellar/sqlite/3.50.4/include
     /opt/homebrew/include/cjson
     /opt/homebrew/include/wx-3.3
     /opt/homebrew/lib
+    /opt/homebrew/Cellar/sqlite/3.50.4/lib
 )
 
 link_directories(/opt/homebrew/lib)
@@ -30,6 +32,7 @@ set(wxWidgets_LIBRARIES
     wx_baseu_net-3.3
     wx_baseu-3.3
     cjson
+    sqlite3
 )
 
 # Frameworks needed on macOS

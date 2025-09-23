@@ -9,15 +9,11 @@ namespace frames::home_frame::panels {
     public:
         HostingPanel(wxPanel* parent_panel);
 
-        std::vector<objects::LocalServer>& GetLocalServers();
-
         void DrawServers();
     private:
         void CreateNewServer(wxMouseEvent&);
 
         wxPanel* hosted_servers_panel;
-
-        std::vector<objects::LocalServer> local_servers;
     };
 
     class ServersPanel : public wxPanel {

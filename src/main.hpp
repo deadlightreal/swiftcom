@@ -3,6 +3,7 @@
 #include <wx/wx.h>
 #include "frames/frames.hpp"
 #include "objects/objects.hpp"
+#include "sqlite3.h"
 
 class Application : public wxApp
 {

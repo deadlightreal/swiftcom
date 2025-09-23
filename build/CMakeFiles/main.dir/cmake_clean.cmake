@@ -7,6 +7,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/frames/home_frame/panels/servers_panel.cpp.o.d"
   "CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/main.cpp.o"
   "CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/main.cpp.o.d"
+  "CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/objects/database.cpp.o"
+  "CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/objects/database.cpp.o.d"
   "CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/objects/local_server.cpp.o"
   "CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/objects/local_server.cpp.o.d"
   "CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/objects/local_storage_data_manager.cpp.o"

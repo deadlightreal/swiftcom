@@ -1,3 +1,5 @@
+#include <cstdlib>
+#include <ctime>
 #include <iostream>
 #include <wx/wx.h>
 #include "frames/frames.hpp"
@@ -25,9 +27,11 @@ objects::LocalStorageDataManager* Application::GetLocalStorageDataManager() {
 }
 
 bool Application::OnInit() {
+    srand(time(0));
+
     frames::HomeFrame* home_frame = this->GetHomeFrame();
 
-    this->local_storage_data_manager = new objects::LocalStorageDataManager(home_frame->GetHostingPanel()->GetLocalServers());
+    this->local_storage_data_manager = new objects::LocalStorageDataManager();
 
     home_frame->GetHostingPanel()->DrawServers();
 

@@ -225,6 +225,30 @@ Users/admin/Desktop/raw_sock_network_example/src/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/main.cpp.s
 .PHONY : Users/admin/Desktop/raw_sock_network_example/src/main.cpp.s
 
+Users/admin/Desktop/raw_sock_network_example/src/objects/database.o: Users/admin/Desktop/raw_sock_network_example/src/objects/database.cpp.o
+.PHONY : Users/admin/Desktop/raw_sock_network_example/src/objects/database.o
+
+# target to build an object file
+Users/admin/Desktop/raw_sock_network_example/src/objects/database.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/objects/database.cpp.o
+.PHONY : Users/admin/Desktop/raw_sock_network_example/src/objects/database.cpp.o
+
+Users/admin/Desktop/raw_sock_network_example/src/objects/database.i: Users/admin/Desktop/raw_sock_network_example/src/objects/database.cpp.i
+.PHONY : Users/admin/Desktop/raw_sock_network_example/src/objects/database.i
+
+# target to preprocess a source file
+Users/admin/Desktop/raw_sock_network_example/src/objects/database.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/objects/database.cpp.i
+.PHONY : Users/admin/Desktop/raw_sock_network_example/src/objects/database.cpp.i
+
+Users/admin/Desktop/raw_sock_network_example/src/objects/database.s: Users/admin/Desktop/raw_sock_network_example/src/objects/database.cpp.s
+.PHONY : Users/admin/Desktop/raw_sock_network_example/src/objects/database.s
+
+# target to generate assembly for a file
+Users/admin/Desktop/raw_sock_network_example/src/objects/database.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/objects/database.cpp.s
+.PHONY : Users/admin/Desktop/raw_sock_network_example/src/objects/database.cpp.s
+
 Users/admin/Desktop/raw_sock_network_example/src/objects/local_server.o: Users/admin/Desktop/raw_sock_network_example/src/objects/local_server.cpp.o
 .PHONY : Users/admin/Desktop/raw_sock_network_example/src/objects/local_server.o
 
@@ -462,6 +486,9 @@ help:
 	@echo "... Users/admin/Desktop/raw_sock_network_example/src/main.o"
 	@echo "... Users/admin/Desktop/raw_sock_network_example/src/main.i"
 	@echo "... Users/admin/Desktop/raw_sock_network_example/src/main.s"
+	@echo "... Users/admin/Desktop/raw_sock_network_example/src/objects/database.o"
+	@echo "... Users/admin/Desktop/raw_sock_network_example/src/objects/database.i"
+	@echo "... Users/admin/Desktop/raw_sock_network_example/src/objects/database.s"
 	@echo "... Users/admin/Desktop/raw_sock_network_example/src/objects/local_server.o"
 	@echo "... Users/admin/Desktop/raw_sock_network_example/src/objects/local_server.i"
 	@echo "... Users/admin/Desktop/raw_sock_network_example/src/objects/local_server.s"

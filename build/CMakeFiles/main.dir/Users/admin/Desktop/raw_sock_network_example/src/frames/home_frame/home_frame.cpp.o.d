@@ -1207,6 +1207,7 @@ CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/frames/home
   /Users/admin/Desktop/raw_sock_network_example/src/frames/home_frame/../../widgets/widgets.hpp \
   /Users/admin/Desktop/raw_sock_network_example/src/frames/home_frame/panels/panels.hpp \
   /Users/admin/Desktop/raw_sock_network_example/src/frames/home_frame/panels/../../../objects/objects.hpp \
+  /opt/homebrew/Cellar/sqlite/3.50.4/include/sqlite3.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/arpa/inet.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/netinet/in.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/socket.h \
