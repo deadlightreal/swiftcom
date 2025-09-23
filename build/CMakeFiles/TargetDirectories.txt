@@ -1,3 +1,0 @@
-/Users/admin/Desktop/raw_sock_network_example/build/CMakeFiles/main.dir
-/Users/admin/Desktop/raw_sock_network_example/build/CMakeFiles/edit_cache.dir
-/Users/admin/Desktop/raw_sock_network_example/build/CMakeFiles/rebuild_cache.dir
