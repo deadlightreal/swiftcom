@@ -1,5 +1,6 @@
 #include "objects.hpp"
 #include "sqlite3.h"
+#include <cstdint>
 #include <cstdlib>
 #include <iostream>
 #include <vector>
@@ -40,7 +41,7 @@ void objects::Database::InitializeHostedServersTable() {
     }
 }
 
-void objects::Database::InsertHostedServer(const uint32_t server_id) {
+void objects::Database::InsertHostedServer(const uint16_t server_id) {
     std::string query = "INSERT INTO hosted_servers (id) VALUES (" + std::to_string(server_id) + ");";
 
     int result = sqlite3_exec(this->GetDatabaseConnection(), query.c_str(), 0, 0, nullptr);
@@ -64,7 +65,7 @@ std::vector<objects::Database::HostedServerRow>* objects::Database::SelectHosted
     std::vector<objects::Database::HostedServerRow>* result = new std::vector<objects::Database::HostedServerRow>();
 
     while (sqlite3_step(stmt) == SQLITE_ROW) {
-        uint32_t id = sqlite3_column_int(stmt, 0);
+        uint16_t id = sqlite3_column_int(stmt, 0);
 
         result->push_back((objects::Database::HostedServerRow){.server_id = id});
     }

@@ -3,6 +3,7 @@
 #include <cstring>
 #include <functional>
 #include <string>
+#include <vector>
 #include <wx/wx.h>
 #include "../../../main.hpp"
 #include "../../../utils/net/net.hpp"
@@ -47,12 +48,13 @@ void frames::home_frame::panels::HostingPanel::DrawServers() {
     for (auto &server : wxGetApp().GetLocalStorageDataManager()->GetSavedData().hosted_servers) {
         wxBoxSizer* button_alignment_sizer = new wxBoxSizer(wxHORIZONTAL);
 
-        std::array<uint8_t, 8> invitation_data;
+        uint16_t server_id = server.GetServerId();
 
-        uint32_t server_id = server.GetServerId();
+        std::vector<uint8_t> invitation_data;
+        invitation_data.resize(sizeof(public_ip_address) + sizeof(server_id));
 
-        memcpy(&invitation_data[0], &public_ip_address, sizeof(public_ip_address));
-        memcpy(&invitation_data[4], &server_id, sizeof(server_id));
+        memcpy(invitation_data.data(), &public_ip_address, sizeof(public_ip_address));
+        memcpy(invitation_data.data() + sizeof(public_ip_address), &server_id, sizeof(server_id));
 
         std::string invitation_code = utils::crypto::base32_encode(invitation_data);
 
@@ -65,12 +67,16 @@ void frames::home_frame::panels::HostingPanel::DrawServers() {
         widgets::StyledPanel* server_panel = new widgets::StyledPanel(this->hosted_servers_panel);
         server_panel->SetMinSize(wxSize(-1, 30));
 
+        widgets::Button* start_server_button = new widgets::Button(server_panel, "Start Server", [this, &server](wxMouseEvent& event){ server.StartServer(); });
+        start_server_button->SetMinSize(wxSize(-1, 30));
+
         wxBoxSizer* button_sizer = new wxBoxSizer(wxHORIZONTAL);
 
         wxStaticText* button_invitation_code_text = new wxStaticText(server_panel, wxID_ANY, invitation_code);
 
         button_sizer->Add(button_invitation_code_text, 4, wxEXPAND | wxALIGN_CENTER_VERTICAL | wxALL);
         button_sizer->AddStretchSpacer(10);
+        button_sizer->Add(start_server_button, 4, wxEXPAND | wxALIGN_CENTER_VERTICAL | wxALL);
 
         button_alignment_sizer->AddStretchSpacer(1);
         button_alignment_sizer->Add(server_panel, 4, wxEXPAND);
@@ -89,7 +95,7 @@ void frames::home_frame::panels::HostingPanel::DrawServers() {
 }
 
 void frames::home_frame::panels::HostingPanel::CreateNewServer(wxMouseEvent&) {
-    uint32_t random_generated_id = rand();
+    uint16_t random_generated_id = rand();
 
     wxGetApp().GetLocalStorageDataManager()->InsertHostedServer(random_generated_id);
 

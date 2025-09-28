@@ -33,6 +33,7 @@ set(wxWidgets_LIBRARIES
     wx_baseu-3.3
     cjson
     sqlite3
+    /Users/admin/Desktop/raw_sock_network_example/external/lib/libswift_net.a
 )
 
 # Frameworks needed on macOS

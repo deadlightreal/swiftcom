@@ -1,5 +1,6 @@
 #pragma once
 
+#include <cstdint>
 #include <wx/wx.h>
 #include "../../../objects/objects.hpp"
 #include <vector>
@@ -20,6 +21,8 @@ namespace frames::home_frame::panels {
     public:
         class AddServerPopupMenu : public wxDialog {
         public:
+            void RequestServerExistsConfirmation(const char* ip_address, const uint16_t server_id);
+
             enum AddServerReturnCode {
                 SUCCESS,
                 INVALID_LENGTH

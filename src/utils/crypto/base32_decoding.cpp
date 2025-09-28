@@ -2,59 +2,42 @@
 #include <array>
 #include <cstdint>
 #include <string>
+#include <vector>
 
-std::array<uint8_t, 8> utils::crypto::base32_decode(const std::string& input) {
-    static const int8_t lookup[256] = {
-        -1,-1,-1,-1,-1,-1,-1,-1,-1,-1, //   0-9
-        -1,-1,-1,-1,-1,-1,-1,-1,-1,-1, //  10-19
-        -1,-1,-1,-1,-1,-1,-1,-1,-1,-1, //  20-29
-        -1,-1,-1,-1,-1,-1,-1,-1,-1,-1, //  30-39
-        -1,-1,-1,-1,-1,-1,-1,-1,-1,-1, //  40-49
-        -1,-1,-1,-1,-1,-1,-1,-1,-1,-1, //  50-59
-        -1,-1,-1,-1,-1,-1,-1,-1,-1,-1, //  60-69
-        -1,-1,-1,-1,-1,-1,-1,-1,-1,-1, //  70-79
-        -1,-1,-1,-1,-1,-1,-1,-1,-1,-1, //  80-89
-        -1,-1,-1,-1,-1,-1,-1,-1,-1,-1, //  90-99
-        -1,-1,-1,-1,-1,-1,-1,-1,-1,-1, // 100-109
-        -1,-1,-1,-1,-1,-1,-1,-1,-1,-1, // 110-119
-        -1,-1,-1,-1,-1,-1,-1,-1,-1,-1, // 120-129
-        -1,-1,-1,-1,-1,-1,-1,-1,-1,-1, // 130-139
-        -1,-1,-1,-1,-1,-1,-1,-1,-1,-1, // 140-149
-        -1,-1,-1,-1,-1,-1,-1,-1,-1,-1, // 150-159
-        -1,-1,-1,-1,-1,-1,-1,-1,-1,-1, // 160-169
-        -1,-1,-1,-1,-1,-1,-1,-1,-1,-1, // 170-179
-        -1,-1,-1,-1,-1,-1,-1,-1,-1,-1, // 180-189
-        -1,-1,-1,-1,-1,-1,-1,-1,-1,-1, // 190-199
-        -1,-1,-1,-1,-1,-1,-1,-1,-1,-1, // 200-209
-        -1,-1,-1,-1,-1,-1,-1,-1,-1,-1, // 210-219
-        -1,-1,-1,-1,-1,-1,-1,-1,-1,-1, // 220-229
-        -1,-1,-1,-1,-1,-1,-1,-1,-1,-1, // 230-239
-        -1,-1,-1,-1,-1,-1,-1,-1,-1,-1, // 240-249
-        -1,-1,-1,-1,-1,-1               // 250-255
-    };
-
+std::vector<uint8_t> utils::crypto::base32_decode(const std::string& input) {
+    static int8_t lookup[256];
     static bool initialized = false;
+
     if (!initialized) {
-        for (int i = 'A'; i <= 'Z'; i++) ((int8_t*)lookup)[i] = i - 'A';
-        for (int i = '2'; i <= '7'; i++) ((int8_t*)lookup)[i] = 26 + (i - '2');
+        for (int i = 0; i < 256; ++i)
+            lookup[i] = -1;
+
+        for (int i = 'A'; i <= 'Z'; ++i)
+            lookup[i] = i - 'A';
+
+        for (int i = 'a'; i <= 'z'; ++i)
+            lookup[i] = i - 'a';
+
+        for (int i = '2'; i <= '7'; ++i)
+            lookup[i] = 26 + (i - '2');
+
         initialized = true;
     }
 
-    std::array<uint8_t, 8> out{};
+    std::vector<uint8_t> out;
     uint32_t buffer = 0;
     int bitsLeft = 0;
-    size_t outIndex = 0;
 
     for (char c : input) {
-        int8_t val = lookup[(uint8_t)c];
-        if (val < 0) continue; // ignore invalid chars
+        int8_t val = lookup[static_cast<uint8_t>(c)];
+        if (val < 0) continue;
+
         buffer = (buffer << 5) | val;
         bitsLeft += 5;
 
         if (bitsLeft >= 8) {
-            out[outIndex++] = (buffer >> (bitsLeft - 8)) & 0xFF;
             bitsLeft -= 8;
-            if (outIndex == out.size()) break;
+            out.push_back((buffer >> bitsLeft) & 0xFF);
         }
     }
 

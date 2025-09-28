@@ -27,6 +27,10 @@ objects::LocalStorageDataManager* Application::GetLocalStorageDataManager() {
 }
 
 bool Application::OnInit() {
+    swiftnet_initialize();
+
+    swiftnet_add_debug_flags(DEBUG_INITIALIZATION | DEBUG_LOST_PACKETS | DEBUG_PACKETS_RECEIVING | DEBUG_PACKETS_SENDING);
+
     srand(time(0));
 
     frames::HomeFrame* home_frame = this->GetHomeFrame();

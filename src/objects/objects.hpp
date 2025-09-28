@@ -7,21 +7,34 @@
 #include <netinet/in.h>
 #include <vector>
 #include <cJSON.h>
+#include "../../external/include/swift_net.h"
 
 namespace objects {
+    typedef enum {
+        STOPPED,
+        RUNNING
+    } HostedServerStatus;
+
     class HostedServer {
     public:
-        HostedServer(uint32_t id);
+        HostedServer(uint16_t id);
 
-        uint32_t GetServerId();
+        void StartServer();
+        void StopServer();
+
+        SwiftNetServer* GetServer();
+        uint16_t GetServerId();
+        HostedServerStatus GetServerStatus();
     private:
-        uint32_t id;
+        uint16_t id;
+        HostedServerStatus status = STOPPED;
+        SwiftNetServer* server = nullptr;
     };
 
     class Database {
     public:
         typedef struct {
-            uint32_t server_id;
+            uint16_t server_id;
         } HostedServerRow;
 
         Database();
@@ -35,7 +48,7 @@ namespace objects {
 
         void InitializeHostedServersTable();
 
-        void InsertHostedServer(const uint32_t server_id);
+        void InsertHostedServer(const uint16_t server_id);
     private:
         sqlite3* database_connection;
     };
@@ -54,7 +67,8 @@ namespace objects {
 
         void save_data();
         void load_data();
-        void InsertHostedServer(const uint32_t server_id);
+        void InsertHostedServer(const uint16_t server_id);
+        HostedServer* GetServerById(const uint16_t server_id);
 
         Database* GetDatabase();
 
@@ -62,5 +76,11 @@ namespace objects {
     private:
         LocalStorageSavedData saved_data;
         Database* database;
+    };
+
+    class ServerHostingManager {
+    public:
+                ServerHostingManager();
+    private:
     };
 }

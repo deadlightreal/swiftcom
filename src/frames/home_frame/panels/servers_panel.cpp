@@ -9,21 +9,37 @@
 #include <wx/wx.h>
 #include "../../../widgets/widgets.hpp"
 #include "../../../utils/crypto/crypto.hpp"
+#include "../../../../external/include/swift_net.h"
+#include "../../../main.hpp"
 
 using frames::home_frame::panels::ServersPanel;
 
+void ServersPanel::AddServerPopupMenu::RequestServerExistsConfirmation(const char* ip_address, const uint16_t server_id) {
+    std::cout << "Server id: " << server_id << std::endl;
+
+    SwiftNetClientConnection* client = swiftnet_create_client(ip_address, server_id);
+
+    const RequestInfo request_info = {.request_type = JOIN_SERVER};
+
+    SwiftNetPacketBuffer buffer = swiftnet_client_create_packet_buffer(sizeof(request_info));
+    
+    swiftnet_client_append_to_packet(client, &request_info, sizeof(RequestInfo), &buffer);
+
+    swiftnet_client_send_packet(client, &buffer);
+}
+
 ServersPanel::AddServerPopupMenu::AddServerReturnCode ServersPanel::AddServerPopupMenu::AddServer(wxString input) {
-    std::array<uint8_t, 8> decoded_code = utils::crypto::base32_decode(input.ToStdString());
-
     in_addr server_ip_address;
-    uint32_t server_id;
+    uint16_t server_id;
 
-    memcpy(&server_ip_address, &decoded_code[0], sizeof(server_ip_address));
-    memcpy(&server_id, &decoded_code[4], sizeof(server_id));
+    std::vector<uint8_t> decoded_code = utils::crypto::base32_decode(input.ToStdString());
 
-    const char* server_id_string = inet_ntoa(server_ip_address);
+    memcpy(&server_ip_address, decoded_code.data(), sizeof(server_ip_address));
+    memcpy(&server_id, decoded_code.data() + sizeof(server_ip_address), sizeof(server_id));
 
-    std::cout << "adding server with ip: " << server_id_string << std::endl;
+    const char* server_ip_string = inet_ntoa(server_ip_address);
+
+    this->RequestServerExistsConfirmation(server_ip_string, server_id);
 
     return SUCCESS;
 }

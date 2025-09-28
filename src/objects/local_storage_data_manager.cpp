@@ -1,5 +1,6 @@
 #include "objects.hpp"
 #include "../utils/file_system/file_system.hpp"
+#include <cstdint>
 #include <cstdio>
 #include <iostream>
 #include <cstdlib>
@@ -13,6 +14,16 @@
 #include <sqlite3.h>
 #include <vector>
 
+objects::HostedServer* objects::LocalStorageDataManager::GetServerById(const uint16_t server_id) {
+    for (auto &server : this->GetSavedData().hosted_servers) {
+        if (server.GetServerId() == server_id) {
+            return &server;
+        }
+    }
+
+    return nullptr;
+}
+
 objects::LocalStorageDataManager::LocalStorageDataManager() : saved_data(LocalStorageSavedData()) {
     this->database = new Database();
 
@@ -23,7 +34,7 @@ objects::LocalStorageDataManager::LocalStorageSavedData& objects::LocalStorageDa
     return this->saved_data;
 }
 
-void objects::LocalStorageDataManager::InsertHostedServer(const uint32_t server_id) {
+void objects::LocalStorageDataManager::InsertHostedServer(const uint16_t server_id) {
     this->GetSavedData().hosted_servers.push_back(objects::HostedServer(server_id));
 
     this->GetDatabase()->InsertHostedServer(server_id);
