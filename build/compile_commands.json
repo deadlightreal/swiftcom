@@ -1,0 +1,92 @@
+[
+{
+  "directory": "/Users/admin/Desktop/raw_sock_network_example/build",
+  "command": "/usr/bin/c++ -DWXUSINGDLL -D_FILE_OFFSET_BITS=64 -D__WXMAC__ -D__WXOSX_COCOA__ -D__WXOSX__ -DwxDEBUG_LEVEL=0 -I/Users/admin/Desktop/raw_sock_network_example/build/../external/include/sqlite -I/Users/admin/Desktop/raw_sock_network_example/build/../external/include/swift_net -I/Users/admin/Desktop/raw_sock_network_example/build/../external/include/wx -I/Users/admin/Desktop/raw_sock_network_example/build/../external/include/wx/macos/osx_cocoa-unicode-3.3 -g -std=gnu++20 -arch arm64 -mmacosx-version-min=14.0 -o CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/frames/home_frame/home_frame.cpp.o -c /Users/admin/Desktop/raw_sock_network_example/src/frames/home_frame/home_frame.cpp",
+  "file": "/Users/admin/Desktop/raw_sock_network_example/src/frames/home_frame/home_frame.cpp",
+  "output": "CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/frames/home_frame/home_frame.cpp.o"
+},
+{
+  "directory": "/Users/admin/Desktop/raw_sock_network_example/build",
+  "command": "/usr/bin/c++ -DWXUSINGDLL -D_FILE_OFFSET_BITS=64 -D__WXMAC__ -D__WXOSX_COCOA__ -D__WXOSX__ -DwxDEBUG_LEVEL=0 -I/Users/admin/Desktop/raw_sock_network_example/build/../external/include/sqlite -I/Users/admin/Desktop/raw_sock_network_example/build/../external/include/swift_net -I/Users/admin/Desktop/raw_sock_network_example/build/../external/include/wx -I/Users/admin/Desktop/raw_sock_network_example/build/../external/include/wx/macos/osx_cocoa-unicode-3.3 -g -std=gnu++20 -arch arm64 -mmacosx-version-min=14.0 -o CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/frames/home_frame/panels/hosting_panel.cpp.o -c /Users/admin/Desktop/raw_sock_network_example/src/frames/home_frame/panels/hosting_panel.cpp",
+  "file": "/Users/admin/Desktop/raw_sock_network_example/src/frames/home_frame/panels/hosting_panel.cpp",
+  "output": "CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/frames/home_frame/panels/hosting_panel.cpp.o"
+},
+{
+  "directory": "/Users/admin/Desktop/raw_sock_network_example/build",
+  "command": "/usr/bin/c++ -DWXUSINGDLL -D_FILE_OFFSET_BITS=64 -D__WXMAC__ -D__WXOSX_COCOA__ -D__WXOSX__ -DwxDEBUG_LEVEL=0 -I/Users/admin/Desktop/raw_sock_network_example/build/../external/include/sqlite -I/Users/admin/Desktop/raw_sock_network_example/build/../external/include/swift_net -I/Users/admin/Desktop/raw_sock_network_example/build/../external/include/wx -I/Users/admin/Desktop/raw_sock_network_example/build/../external/include/wx/macos/osx_cocoa-unicode-3.3 -g -std=gnu++20 -arch arm64 -mmacosx-version-min=14.0 -o CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/frames/home_frame/panels/servers_panel.cpp.o -c /Users/admin/Desktop/raw_sock_network_example/src/frames/home_frame/panels/servers_panel.cpp",
+  "file": "/Users/admin/Desktop/raw_sock_network_example/src/frames/home_frame/panels/servers_panel.cpp",
+  "output": "CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/frames/home_frame/panels/servers_panel.cpp.o"
+},
+{
+  "directory": "/Users/admin/Desktop/raw_sock_network_example/build",
+  "command": "/usr/bin/c++ -DWXUSINGDLL -D_FILE_OFFSET_BITS=64 -D__WXMAC__ -D__WXOSX_COCOA__ -D__WXOSX__ -DwxDEBUG_LEVEL=0 -I/Users/admin/Desktop/raw_sock_network_example/build/../external/include/sqlite -I/Users/admin/Desktop/raw_sock_network_example/build/../external/include/swift_net -I/Users/admin/Desktop/raw_sock_network_example/build/../external/include/wx -I/Users/admin/Desktop/raw_sock_network_example/build/../external/include/wx/macos/osx_cocoa-unicode-3.3 -g -std=gnu++20 -arch arm64 -mmacosx-version-min=14.0 -o CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/main.cpp.o -c /Users/admin/Desktop/raw_sock_network_example/src/main.cpp",
+  "file": "/Users/admin/Desktop/raw_sock_network_example/src/main.cpp",
+  "output": "CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/main.cpp.o"
+},
+{
+  "directory": "/Users/admin/Desktop/raw_sock_network_example/build",
+  "command": "/usr/bin/c++ -DWXUSINGDLL -D_FILE_OFFSET_BITS=64 -D__WXMAC__ -D__WXOSX_COCOA__ -D__WXOSX__ -DwxDEBUG_LEVEL=0 -I/Users/admin/Desktop/raw_sock_network_example/build/../external/include/sqlite -I/Users/admin/Desktop/raw_sock_network_example/build/../external/include/swift_net -I/Users/admin/Desktop/raw_sock_network_example/build/../external/include/wx -I/Users/admin/Desktop/raw_sock_network_example/build/../external/include/wx/macos/osx_cocoa-unicode-3.3 -g -std=gnu++20 -arch arm64 -mmacosx-version-min=14.0 -o CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/objects/database.cpp.o -c /Users/admin/Desktop/raw_sock_network_example/src/objects/database.cpp",
+  "file": "/Users/admin/Desktop/raw_sock_network_example/src/objects/database.cpp",
+  "output": "CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/objects/database.cpp.o"
+},
+{
+  "directory": "/Users/admin/Desktop/raw_sock_network_example/build",
+  "command": "/usr/bin/c++ -DWXUSINGDLL -D_FILE_OFFSET_BITS=64 -D__WXMAC__ -D__WXOSX_COCOA__ -D__WXOSX__ -DwxDEBUG_LEVEL=0 -I/Users/admin/Desktop/raw_sock_network_example/build/../external/include/sqlite -I/Users/admin/Desktop/raw_sock_network_example/build/../external/include/swift_net -I/Users/admin/Desktop/raw_sock_network_example/build/../external/include/wx -I/Users/admin/Desktop/raw_sock_network_example/build/../external/include/wx/macos/osx_cocoa-unicode-3.3 -g -std=gnu++20 -arch arm64 -mmacosx-version-min=14.0 -o CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/objects/hosted_server.cpp.o -c /Users/admin/Desktop/raw_sock_network_example/src/objects/hosted_server.cpp",
+  "file": "/Users/admin/Desktop/raw_sock_network_example/src/objects/hosted_server.cpp",
+  "output": "CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/objects/hosted_server.cpp.o"
+},
+{
+  "directory": "/Users/admin/Desktop/raw_sock_network_example/build",
+  "command": "/usr/bin/c++ -DWXUSINGDLL -D_FILE_OFFSET_BITS=64 -D__WXMAC__ -D__WXOSX_COCOA__ -D__WXOSX__ -DwxDEBUG_LEVEL=0 -I/Users/admin/Desktop/raw_sock_network_example/build/../external/include/sqlite -I/Users/admin/Desktop/raw_sock_network_example/build/../external/include/swift_net -I/Users/admin/Desktop/raw_sock_network_example/build/../external/include/wx -I/Users/admin/Desktop/raw_sock_network_example/build/../external/include/wx/macos/osx_cocoa-unicode-3.3 -g -std=gnu++20 -arch arm64 -mmacosx-version-min=14.0 -o CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/objects/local_storage_data_manager.cpp.o -c /Users/admin/Desktop/raw_sock_network_example/src/objects/local_storage_data_manager.cpp",
+  "file": "/Users/admin/Desktop/raw_sock_network_example/src/objects/local_storage_data_manager.cpp",
+  "output": "CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/objects/local_storage_data_manager.cpp.o"
+},
+{
+  "directory": "/Users/admin/Desktop/raw_sock_network_example/build",
+  "command": "/usr/bin/c++ -DWXUSINGDLL -D_FILE_OFFSET_BITS=64 -D__WXMAC__ -D__WXOSX_COCOA__ -D__WXOSX__ -DwxDEBUG_LEVEL=0 -I/Users/admin/Desktop/raw_sock_network_example/build/../external/include/sqlite -I/Users/admin/Desktop/raw_sock_network_example/build/../external/include/swift_net -I/Users/admin/Desktop/raw_sock_network_example/build/../external/include/wx -I/Users/admin/Desktop/raw_sock_network_example/build/../external/include/wx/macos/osx_cocoa-unicode-3.3 -g -std=gnu++20 -arch arm64 -mmacosx-version-min=14.0 -o CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/objects/server_hosting_manager.cpp.o -c /Users/admin/Desktop/raw_sock_network_example/src/objects/server_hosting_manager.cpp",
+  "file": "/Users/admin/Desktop/raw_sock_network_example/src/objects/server_hosting_manager.cpp",
+  "output": "CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/objects/server_hosting_manager.cpp.o"
+},
+{
+  "directory": "/Users/admin/Desktop/raw_sock_network_example/build",
+  "command": "/usr/bin/c++ -DWXUSINGDLL -D_FILE_OFFSET_BITS=64 -D__WXMAC__ -D__WXOSX_COCOA__ -D__WXOSX__ -DwxDEBUG_LEVEL=0 -I/Users/admin/Desktop/raw_sock_network_example/build/../external/include/sqlite -I/Users/admin/Desktop/raw_sock_network_example/build/../external/include/swift_net -I/Users/admin/Desktop/raw_sock_network_example/build/../external/include/wx -I/Users/admin/Desktop/raw_sock_network_example/build/../external/include/wx/macos/osx_cocoa-unicode-3.3 -g -std=gnu++20 -arch arm64 -mmacosx-version-min=14.0 -o CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/utils/crypto/base32_decoding.cpp.o -c /Users/admin/Desktop/raw_sock_network_example/src/utils/crypto/base32_decoding.cpp",
+  "file": "/Users/admin/Desktop/raw_sock_network_example/src/utils/crypto/base32_decoding.cpp",
+  "output": "CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/utils/crypto/base32_decoding.cpp.o"
+},
+{
+  "directory": "/Users/admin/Desktop/raw_sock_network_example/build",
+  "command": "/usr/bin/c++ -DWXUSINGDLL -D_FILE_OFFSET_BITS=64 -D__WXMAC__ -D__WXOSX_COCOA__ -D__WXOSX__ -DwxDEBUG_LEVEL=0 -I/Users/admin/Desktop/raw_sock_network_example/build/../external/include/sqlite -I/Users/admin/Desktop/raw_sock_network_example/build/../external/include/swift_net -I/Users/admin/Desktop/raw_sock_network_example/build/../external/include/wx -I/Users/admin/Desktop/raw_sock_network_example/build/../external/include/wx/macos/osx_cocoa-unicode-3.3 -g -std=gnu++20 -arch arm64 -mmacosx-version-min=14.0 -o CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/utils/crypto/base32_encoding.cpp.o -c /Users/admin/Desktop/raw_sock_network_example/src/utils/crypto/base32_encoding.cpp",
+  "file": "/Users/admin/Desktop/raw_sock_network_example/src/utils/crypto/base32_encoding.cpp",
+  "output": "CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/utils/crypto/base32_encoding.cpp.o"
+},
+{
+  "directory": "/Users/admin/Desktop/raw_sock_network_example/build",
+  "command": "/usr/bin/c++ -DWXUSINGDLL -D_FILE_OFFSET_BITS=64 -D__WXMAC__ -D__WXOSX_COCOA__ -D__WXOSX__ -DwxDEBUG_LEVEL=0 -I/Users/admin/Desktop/raw_sock_network_example/build/../external/include/sqlite -I/Users/admin/Desktop/raw_sock_network_example/build/../external/include/swift_net -I/Users/admin/Desktop/raw_sock_network_example/build/../external/include/wx -I/Users/admin/Desktop/raw_sock_network_example/build/../external/include/wx/macos/osx_cocoa-unicode-3.3 -g -std=gnu++20 -arch arm64 -mmacosx-version-min=14.0 -o CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/utils/file_system/application_directory.cpp.o -c /Users/admin/Desktop/raw_sock_network_example/src/utils/file_system/application_directory.cpp",
+  "file": "/Users/admin/Desktop/raw_sock_network_example/src/utils/file_system/application_directory.cpp",
+  "output": "CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/utils/file_system/application_directory.cpp.o"
+},
+{
+  "directory": "/Users/admin/Desktop/raw_sock_network_example/build",
+  "command": "/usr/bin/c++ -DWXUSINGDLL -D_FILE_OFFSET_BITS=64 -D__WXMAC__ -D__WXOSX_COCOA__ -D__WXOSX__ -DwxDEBUG_LEVEL=0 -I/Users/admin/Desktop/raw_sock_network_example/build/../external/include/sqlite -I/Users/admin/Desktop/raw_sock_network_example/build/../external/include/swift_net -I/Users/admin/Desktop/raw_sock_network_example/build/../external/include/wx -I/Users/admin/Desktop/raw_sock_network_example/build/../external/include/wx/macos/osx_cocoa-unicode-3.3 -g -std=gnu++20 -arch arm64 -mmacosx-version-min=14.0 -o CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/utils/net/get_public_ip.cpp.o -c /Users/admin/Desktop/raw_sock_network_example/src/utils/net/get_public_ip.cpp",
+  "file": "/Users/admin/Desktop/raw_sock_network_example/src/utils/net/get_public_ip.cpp",
+  "output": "CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/utils/net/get_public_ip.cpp.o"
+},
+{
+  "directory": "/Users/admin/Desktop/raw_sock_network_example/build",
+  "command": "/usr/bin/c++ -DWXUSINGDLL -D_FILE_OFFSET_BITS=64 -D__WXMAC__ -D__WXOSX_COCOA__ -D__WXOSX__ -DwxDEBUG_LEVEL=0 -I/Users/admin/Desktop/raw_sock_network_example/build/../external/include/sqlite -I/Users/admin/Desktop/raw_sock_network_example/build/../external/include/swift_net -I/Users/admin/Desktop/raw_sock_network_example/build/../external/include/wx -I/Users/admin/Desktop/raw_sock_network_example/build/../external/include/wx/macos/osx_cocoa-unicode-3.3 -g -std=gnu++20 -arch arm64 -mmacosx-version-min=14.0 -o CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/widgets/button.cpp.o -c /Users/admin/Desktop/raw_sock_network_example/src/widgets/button.cpp",
+  "file": "/Users/admin/Desktop/raw_sock_network_example/src/widgets/button.cpp",
+  "output": "CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/widgets/button.cpp.o"
+},
+{
+  "directory": "/Users/admin/Desktop/raw_sock_network_example/build",
+  "command": "/usr/bin/c++ -DWXUSINGDLL -D_FILE_OFFSET_BITS=64 -D__WXMAC__ -D__WXOSX_COCOA__ -D__WXOSX__ -DwxDEBUG_LEVEL=0 -I/Users/admin/Desktop/raw_sock_network_example/build/../external/include/sqlite -I/Users/admin/Desktop/raw_sock_network_example/build/../external/include/swift_net -I/Users/admin/Desktop/raw_sock_network_example/build/../external/include/wx -I/Users/admin/Desktop/raw_sock_network_example/build/../external/include/wx/macos/osx_cocoa-unicode-3.3 -g -std=gnu++20 -arch arm64 -mmacosx-version-min=14.0 -o CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/widgets/menu_bar.cpp.o -c /Users/admin/Desktop/raw_sock_network_example/src/widgets/menu_bar.cpp",
+  "file": "/Users/admin/Desktop/raw_sock_network_example/src/widgets/menu_bar.cpp",
+  "output": "CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/widgets/menu_bar.cpp.o"
+},
+{
+  "directory": "/Users/admin/Desktop/raw_sock_network_example/build",
+  "command": "/usr/bin/c++ -DWXUSINGDLL -D_FILE_OFFSET_BITS=64 -D__WXMAC__ -D__WXOSX_COCOA__ -D__WXOSX__ -DwxDEBUG_LEVEL=0 -I/Users/admin/Desktop/raw_sock_network_example/build/../external/include/sqlite -I/Users/admin/Desktop/raw_sock_network_example/build/../external/include/swift_net -I/Users/admin/Desktop/raw_sock_network_example/build/../external/include/wx -I/Users/admin/Desktop/raw_sock_network_example/build/../external/include/wx/macos/osx_cocoa-unicode-3.3 -g -std=gnu++20 -arch arm64 -mmacosx-version-min=14.0 -o CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/widgets/styled_panel.cpp.o -c /Users/admin/Desktop/raw_sock_network_example/src/widgets/styled_panel.cpp",
+  "file": "/Users/admin/Desktop/raw_sock_network_example/src/widgets/styled_panel.cpp",
+  "output": "CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/widgets/styled_panel.cpp.o"
+}
+]

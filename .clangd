@@ -1,0 +1,12 @@
+CompileFlags:
+    Add:
+        - "-std=c++20"
+        - "-x"
+        - "c++"
+        - "-I../external/include"
+        - "-D_FILE_OFFSET_BITS=64"
+        - "-DwxDEBUG_LEVEL=0"
+        - "-DWXUSINGDLL"
+        - "-D__WXMAC__"
+        - "-D__WXOSX__"
+        - "-D__WXOSX_COCOA__"

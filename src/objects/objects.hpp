@@ -1,13 +1,12 @@
 #pragma once
 
-#include "sqlite3.h"
+#include <sqlite3.h>
 #include <arpa/inet.h>
 #include <cstdint>
 #include <fstream>
 #include <netinet/in.h>
 #include <vector>
-#include <cJSON.h>
-#include "../../external/include/swift_net.h"
+#include <swift_net.h>
 
 namespace objects {
     typedef enum {

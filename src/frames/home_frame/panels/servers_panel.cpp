@@ -9,7 +9,7 @@
 #include <wx/wx.h>
 #include "../../../widgets/widgets.hpp"
 #include "../../../utils/crypto/crypto.hpp"
-#include "../../../../external/include/swift_net.h"
+#include <swift_net.h>
 #include "../../../main.hpp"
 
 using frames::home_frame::panels::ServersPanel;

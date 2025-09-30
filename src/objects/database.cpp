@@ -1,5 +1,5 @@
 #include "objects.hpp"
-#include "sqlite3.h"
+#include <sqlite3.h>
 #include <cstdint>
 #include <cstdlib>
 #include <iostream>

@@ -1,7 +1,7 @@
 #include "objects.hpp"
 #include <arpa/inet.h>
 #include <cstdint>
-#include "../../external/include/swift_net.h"
+#include <swift_net.h>
 #include "../main.hpp"
 
 objects::HostedServer::HostedServer(uint16_t id) : id(id) {};
