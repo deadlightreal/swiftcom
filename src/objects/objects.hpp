@@ -5,6 +5,7 @@
 #include <cstdint>
 #include <fstream>
 #include <netinet/in.h>
+#include <unordered_map>
 #include <vector>
 #include <swift_net.h>
 
@@ -30,6 +31,14 @@ namespace objects {
         SwiftNetServer* server = nullptr;
     };
 
+    class JoinedServer {
+    public:
+        JoinedServer(uint16_t server_id, in_addr server_ip_address);
+    private:
+        uint16_t server_id;
+        in_addr server_ip_address;
+    };
+
     class Database {
     public:
         typedef struct {
@@ -41,6 +50,11 @@ namespace objects {
             in_addr ip_address;
         } JoinedServerRow;
 
+        typedef struct {
+            const char* statement_name;
+            const char* query;
+        } Statement;
+
         Database();
 
         sqlite3* GetDatabaseConnection();
@@ -48,24 +62,28 @@ namespace objects {
         void OpenDatabase();
         void InitializeDatabaseTables();
 
+        void PrepareStatements();
+
+        sqlite3_stmt* GetStatement(const char* statement_name);
+
         std::vector<HostedServerRow>* SelectHostedServers();
         std::vector<JoinedServerRow>* SelectJoinedServers();
 
-        void InitializeHostedServersTable();
-        void InitializeHostedServerUsersTable();
-        void InitializeJoinedServers();
+        std::unordered_map<const char*, sqlite3_stmt*>& GetStatements();
 
         int InsertHostedServer(const uint16_t server_id);
         int InsertHostedServerUser(const uint16_t server_id, in_addr ip_address);
         int InsertJoinedServer(const uint16_t server_id, in_addr ip_address);
     private:
         sqlite3* database_connection;
+        std::unordered_map<const char*, sqlite3_stmt*> statements;
     };
 
     class LocalStorageDataManager {
     public:
         struct LocalStorageSavedData {
             std::vector<HostedServer> hosted_servers;
+            std::vector<JoinedServer> joined_servers;
 
             LocalStorageSavedData() {}
         };

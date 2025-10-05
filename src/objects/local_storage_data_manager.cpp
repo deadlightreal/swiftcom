@@ -41,9 +41,14 @@ void objects::LocalStorageDataManager::InsertHostedServer(const uint16_t server_
 
 void objects::LocalStorageDataManager::load_data() {
     std::vector<objects::Database::HostedServerRow>* hosted_servers = this->GetDatabase()->SelectHostedServers();
+    std::vector<objects::Database::JoinedServerRow>* joined_servers = this->GetDatabase()->SelectJoinedServers();
 
-    for (uint32_t i = 0; i < hosted_servers->size(); i++) {
-        this->GetSavedData().hosted_servers.push_back(objects::HostedServer(hosted_servers->at(i).server_id));
+    for (const auto& hosted_server : *hosted_servers) {
+        this->GetSavedData().hosted_servers.push_back(objects::HostedServer(hosted_server.server_id));
+    }
+
+    for (const auto& joined_server : *joined_servers) {
+        this->GetSavedData().joined_servers.push_back(objects::JoinedServer(joined_server.server_id, joined_server.ip_address));
     }
 }
 

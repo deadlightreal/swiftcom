@@ -25,8 +25,8 @@ typedef enum {
 
 ServerExistsResponse server_exists = NO_RESPONSE;
 
-void PacketCallback(uint8_t* data, SwiftNetPacketClientMetadata* metadata) {
-    const JoinServerResponse* response = (JoinServerResponse*)data;
+void PacketCallback(SwiftNetClientPacketData* packet_data) {
+    const JoinServerResponse* response = (JoinServerResponse*)swiftnet_client_read_packet(packet_data, sizeof(JoinServerResponse));
 
     if(response->status == SUCCESS) {
         server_exists = EXISTS;

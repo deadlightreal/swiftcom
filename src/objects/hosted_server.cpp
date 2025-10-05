@@ -15,8 +15,8 @@ objects::HostedServerStatus objects::HostedServer::GetServerStatus() {
     return this->status;
 }
 
-void HandleJoinServerRequest(objects::HostedServer* server, uint8_t* data, SwiftNetPacketServerMetadata* metadata) {
-    const in_addr ip_address = metadata->sender.sender_address.sin_addr;
+void HandleJoinServerRequest(objects::HostedServer* server, SwiftNetServerPacketData* packet_data) {
+    const in_addr ip_address = packet_data->metadata.sender.sender_address.sin_addr;
     const uint16_t server_id = server->GetServerId();
 
     int result = wxGetApp().GetLocalStorageDataManager()->GetDatabase()->InsertHostedServerUser(server_id, ip_address);
@@ -29,7 +29,7 @@ void HandleJoinServerRequest(objects::HostedServer* server, uint8_t* data, Swift
 
         swiftnet_server_append_to_packet(server->GetServer(), &response, sizeof(response), &buffer);
 
-        swiftnet_server_send_packet(server->GetServer(), &buffer, metadata->sender);
+        swiftnet_server_send_packet(server->GetServer(), &buffer, packet_data->metadata.sender);
 
         swiftnet_server_destroy_packet_buffer(&buffer);
     }
@@ -42,13 +42,13 @@ void HandleJoinServerRequest(objects::HostedServer* server, uint8_t* data, Swift
 
     swiftnet_server_append_to_packet(server->GetServer(), &response, sizeof(response), &buffer);
 
-    swiftnet_server_send_packet(server->GetServer(), &buffer, metadata->sender);
+    swiftnet_server_send_packet(server->GetServer(), &buffer, packet_data->metadata.sender);
 
     swiftnet_server_destroy_packet_buffer(&buffer);
 }
 
-void PacketCallback(uint8_t* data, SwiftNetPacketServerMetadata* metadata) {
-    const uint16_t server_id = metadata->port_info.destination_port;
+void PacketCallback(SwiftNetServerPacketData*  packet_data) {
+    const uint16_t server_id = packet_data->metadata.port_info.destination_port;
 
     objects::HostedServer* server = wxGetApp().GetLocalStorageDataManager()->GetServerById(server_id);
     if (server == nullptr) {
@@ -56,10 +56,10 @@ void PacketCallback(uint8_t* data, SwiftNetPacketServerMetadata* metadata) {
         return;
     }
 
-    RequestInfo* request_info = (RequestInfo *)data;
+    RequestInfo* request_info = (RequestInfo*)swiftnet_server_read_packet(packet_data, sizeof(RequestInfo));
 
     switch (request_info->request_type) {
-        case JOIN_SERVER: HandleJoinServerRequest(server, data, metadata); break;
+        case JOIN_SERVER: HandleJoinServerRequest(server, packet_data); break;
     }
 }
 
