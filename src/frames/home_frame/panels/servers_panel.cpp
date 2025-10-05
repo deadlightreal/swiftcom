@@ -6,7 +6,10 @@
 #include <iostream>
 #include <netinet/in.h>
 #include <string>
+#include <sys/socket.h>
+#include <unistd.h>
 #include <wx/wx.h>
+#include "../../../utils/net/net.hpp"
 #include "../../../widgets/widgets.hpp"
 #include "../../../utils/crypto/crypto.hpp"
 #include <swift_net.h>
@@ -14,18 +17,62 @@
 
 using frames::home_frame::panels::ServersPanel;
 
+typedef enum {
+    EXISTS,
+    NO_RESPONSE,
+    FAILED_STATUS
+} ServerExistsResponse;
+
+ServerExistsResponse server_exists = NO_RESPONSE;
+
+void PacketCallback(uint8_t* data, SwiftNetPacketClientMetadata* metadata) {
+    const JoinServerResponse* response = (JoinServerResponse*)data;
+
+    if(response->status == SUCCESS) {
+        server_exists = EXISTS;
+    } else {
+        server_exists = FAILED_STATUS;
+    }
+}
+
 void ServersPanel::AddServerPopupMenu::RequestServerExistsConfirmation(const char* ip_address, const uint16_t server_id) {
     std::cout << "Server id: " << server_id << std::endl;
 
     SwiftNetClientConnection* client = swiftnet_create_client(ip_address, server_id);
 
+    swiftnet_client_set_message_handler(client, PacketCallback);
+
     const RequestInfo request_info = {.request_type = JOIN_SERVER};
 
-    SwiftNetPacketBuffer buffer = swiftnet_client_create_packet_buffer(sizeof(request_info));
-    
-    swiftnet_client_append_to_packet(client, &request_info, sizeof(RequestInfo), &buffer);
+    while (server_exists == NO_RESPONSE) {
+        SwiftNetPacketBuffer buffer = swiftnet_client_create_packet_buffer(sizeof(request_info));
+        
+        swiftnet_client_append_to_packet(client, &request_info, sizeof(RequestInfo), &buffer);
 
-    swiftnet_client_send_packet(client, &buffer);
+        swiftnet_client_send_packet(client, &buffer);
+
+        swiftnet_client_destroy_packet_buffer(&buffer);
+
+        usleep(250000);
+    }
+
+    in_addr parsed_ip_address;
+    inet_pton(AF_INET, ip_address, &parsed_ip_address);
+
+    switch (server_exists) {
+        case EXISTS:
+            wxGetApp().GetLocalStorageDataManager()->GetDatabase()->InsertJoinedServer(server_id, parsed_ip_address);
+
+            break;
+        case FAILED_STATUS:
+            break;
+        case NO_RESPONSE:
+            break;
+    }
+
+    server_exists = NO_RESPONSE;
+
+    swiftnet_client_cleanup(client);
 }
 
 ServersPanel::AddServerPopupMenu::AddServerReturnCode ServersPanel::AddServerPopupMenu::AddServer(wxString input) {
@@ -36,6 +83,12 @@ ServersPanel::AddServerPopupMenu::AddServerReturnCode ServersPanel::AddServerPop
 
     memcpy(&server_ip_address, decoded_code.data(), sizeof(server_ip_address));
     memcpy(&server_id, decoded_code.data() + sizeof(server_ip_address), sizeof(server_id));
+
+    in_addr public_ip_local = utils::net::get_public_ip();
+
+    if (public_ip_local.s_addr == server_ip_address.s_addr) {
+        server_ip_address = utils::net::get_private_ip();
+    }
 
     const char* server_ip_string = inet_ntoa(server_ip_address);
 

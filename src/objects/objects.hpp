@@ -36,6 +36,11 @@ namespace objects {
             uint16_t server_id;
         } HostedServerRow;
 
+        typedef struct {
+            uint16_t server_id;
+            in_addr ip_address;
+        } JoinedServerRow;
+
         Database();
 
         sqlite3* GetDatabaseConnection();
@@ -44,10 +49,15 @@ namespace objects {
         void InitializeDatabaseTables();
 
         std::vector<HostedServerRow>* SelectHostedServers();
+        std::vector<JoinedServerRow>* SelectJoinedServers();
 
         void InitializeHostedServersTable();
+        void InitializeHostedServerUsersTable();
+        void InitializeJoinedServers();
 
-        void InsertHostedServer(const uint16_t server_id);
+        int InsertHostedServer(const uint16_t server_id);
+        int InsertHostedServerUser(const uint16_t server_id, in_addr ip_address);
+        int InsertJoinedServer(const uint16_t server_id, in_addr ip_address);
     private:
         sqlite3* database_connection;
     };
@@ -79,7 +89,7 @@ namespace objects {
 
     class ServerHostingManager {
     public:
-                ServerHostingManager();
+        ServerHostingManager();
     private:
     };
 }

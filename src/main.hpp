@@ -9,12 +9,21 @@
 // Request Types
 
 typedef enum {
+    SUCCESS,
+    FAIL
+} RequestStatus;
+
+typedef enum {
     JOIN_SERVER
 } RequestType;
 
 typedef struct {
     RequestType request_type;
 } RequestInfo;
+
+typedef struct {
+    RequestStatus status;
+} JoinServerResponse;
 
 class Application : public wxApp
 {
