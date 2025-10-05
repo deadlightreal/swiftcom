@@ -33,9 +33,12 @@ namespace frames::home_frame::panels {
             AddServerReturnCode AddServer(wxString input);
         };
 
+        void DrawServers();
+
         ServersPanel(wxPanel* parent_panel);
 
         void OpenAddServerPopupMenu(wxMouseEvent& event, wxWindow* parent);
     private:
+        wxPanel* joined_servers_panel;
     };
 }

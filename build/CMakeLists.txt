@@ -31,7 +31,6 @@ file(GLOB_RECURSE SOURCES "../src/*.cpp")
 add_executable(${PROJECT_NAME} ${SOURCES})
 
 find_package(swiftnet REQUIRED)
-
 target_include_directories(main PRIVATE ${SWIFTNET_INCLUDE_DIRS})
 target_link_libraries(main PRIVATE ${SWIFTNET_LIBRARIES})
 

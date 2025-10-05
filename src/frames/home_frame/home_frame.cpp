@@ -27,6 +27,10 @@ frames::HomeFrame::HomeFrame() : wxFrame(nullptr, wxID_ANY, "Home Frame", wxDefa
     mainPanel->SetSizer(vSizer);
 }
 
+frames::home_frame::panels::ServersPanel* frames::HomeFrame::GetServersPanel() {
+    return this->servers_panel;
+}
+
 frames::home_frame::panels::HostingPanel* frames::HomeFrame::GetHostingPanel() {
     return this->hosting_panel;
 }

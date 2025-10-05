@@ -34,6 +34,9 @@ namespace objects {
     class JoinedServer {
     public:
         JoinedServer(uint16_t server_id, in_addr server_ip_address);
+
+        uint16_t GetServerId();
+        in_addr GetServerIpAddress();
     private:
         uint16_t server_id;
         in_addr server_ip_address;

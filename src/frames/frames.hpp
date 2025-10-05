@@ -14,6 +14,7 @@ namespace frames {
         void Frame(wxTimerEvent& event);
 
         frames::home_frame::panels::HostingPanel* GetHostingPanel();
+        frames::home_frame::panels::ServersPanel* GetServersPanel();
     private:
         frames::home_frame::panels::HostingPanel* hosting_panel;
         frames::home_frame::panels::ServersPanel* servers_panel;

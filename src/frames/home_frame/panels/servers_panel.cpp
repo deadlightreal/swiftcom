@@ -75,6 +75,53 @@ void ServersPanel::AddServerPopupMenu::RequestServerExistsConfirmation(const cha
     swiftnet_client_cleanup(client);
 }
 
+void ServersPanel::DrawServers() {
+    this->joined_servers_panel->DestroyChildren();
+
+    wxBoxSizer* v_sizer = new wxBoxSizer(wxVERTICAL);
+
+    this->joined_servers_panel->SetSizer(v_sizer);
+
+    for (auto &server : wxGetApp().GetLocalStorageDataManager()->GetSavedData().joined_servers) {
+        wxBoxSizer* button_alignment_sizer = new wxBoxSizer(wxHORIZONTAL);
+
+        uint16_t server_id = server.GetServerId();
+        in_addr server_ip_address = server.GetServerIpAddress();
+
+        const char* server_ip_address_parsed = inet_ntoa(server_ip_address);
+
+        widgets::StyledPanel* server_panel = new widgets::StyledPanel(this->joined_servers_panel);
+        server_panel->SetMinSize(wxSize(-1, 30));
+
+        widgets::Button* start_server_button = new widgets::Button(server_panel, "Enter Server", [this, &server](wxMouseEvent& event){ });
+        start_server_button->SetMinSize(wxSize(-1, 30));
+
+        wxBoxSizer* button_sizer = new wxBoxSizer(wxHORIZONTAL);
+
+        std::string joined_server_text_string = std::string(server_ip_address_parsed) + "   " + std::to_string(server_id);
+
+        wxStaticText* joined_server_text = new wxStaticText(server_panel, wxID_ANY, joined_server_text_string);
+
+        button_sizer->Add(joined_server_text, 4, wxEXPAND | wxALIGN_CENTER_VERTICAL | wxALL);
+        button_sizer->AddStretchSpacer(10);
+        button_sizer->Add(start_server_button, 4, wxEXPAND | wxALIGN_CENTER_VERTICAL | wxALL);
+
+        button_alignment_sizer->AddStretchSpacer(1);
+        button_alignment_sizer->Add(server_panel, 4, wxEXPAND);
+        button_alignment_sizer->AddStretchSpacer(1);
+
+        server_panel->SetSizer(button_sizer);
+
+        v_sizer->Add(button_alignment_sizer, 0, wxEXPAND | wxALL, 10);
+
+        v_sizer->AddStretchSpacer(1);
+    }
+
+    this->joined_servers_panel->GetParent()->Layout();
+    this->joined_servers_panel->GetParent()->Refresh();
+    this->joined_servers_panel->GetParent()->SendSizeEvent();
+}
+
 ServersPanel::AddServerPopupMenu::AddServerReturnCode ServersPanel::AddServerPopupMenu::AddServer(wxString input) {
     in_addr server_ip_address;
     uint16_t server_id;
@@ -131,7 +178,13 @@ ServersPanel::ServersPanel(wxPanel* parent_panel) : wxPanel(parent_panel) {
     add_server_button_sizer->Add(add_server_button, 4, wxEXPAND);
     add_server_button_sizer->AddStretchSpacer(1);
 
+    this->joined_servers_panel = new wxPanel(this);
+
     wxBoxSizer* main_vert_sizer = new wxBoxSizer(wxVERTICAL);
+
+    main_vert_sizer->AddStretchSpacer(1);
+
+    main_vert_sizer->Add(this->joined_servers_panel, 4, wxEXPAND);
 
     main_vert_sizer->AddStretchSpacer(1);
 

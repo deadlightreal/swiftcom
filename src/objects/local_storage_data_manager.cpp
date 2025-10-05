@@ -50,6 +50,9 @@ void objects::LocalStorageDataManager::load_data() {
     for (const auto& joined_server : *joined_servers) {
         this->GetSavedData().joined_servers.push_back(objects::JoinedServer(joined_server.server_id, joined_server.ip_address));
     }
+
+    free(joined_servers);
+    free(hosted_servers);
 }
 
 objects::Database* objects::LocalStorageDataManager::GetDatabase() {
