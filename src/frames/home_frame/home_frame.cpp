@@ -8,7 +8,7 @@
 frames::HomeFrame::HomeFrame() : wxFrame(nullptr, wxID_ANY, "Home Frame", wxDefaultPosition, wxSize(800, 600)) {
     timer.SetOwner(this);
     Bind(wxEVT_TIMER, &HomeFrame::Frame, this);
-    timer.Start(16);
+    timer.Start(1000 / 60);
 
     wxPanel* mainPanel = new wxPanel(this);
 
@@ -19,10 +19,8 @@ frames::HomeFrame::HomeFrame() : wxFrame(nullptr, wxID_ANY, "Home Frame", wxDefa
 
     wxBoxSizer* vSizer = new wxBoxSizer(wxVERTICAL);
     vSizer->Add(menu_bar, 0, wxEXPAND);
-    vSizer->Add(servers_panel, 0, wxEXPAND);
-    vSizer->Add(hosting_panel, 0, wxEXPAND);
-
-    vSizer->AddStretchSpacer(1);
+    vSizer->Add(hosting_panel, 1, wxEXPAND);
+    vSizer->Add(servers_panel, 1, wxEXPAND);
 
     mainPanel->SetSizer(vSizer);
 }
@@ -58,4 +56,7 @@ void frames::HomeFrame::Frame(wxTimerEvent& event) {
 
             break;
     }
+
+    Layout();
+    Refresh();
 }

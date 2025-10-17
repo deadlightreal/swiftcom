@@ -83,8 +83,6 @@ void ServersPanel::DrawServers() {
     this->joined_servers_panel->SetSizer(v_sizer);
 
     for (auto &server : wxGetApp().GetLocalStorageDataManager()->GetSavedData().joined_servers) {
-        wxBoxSizer* button_alignment_sizer = new wxBoxSizer(wxHORIZONTAL);
-
         uint16_t server_id = server.GetServerId();
         in_addr server_ip_address = server.GetServerIpAddress();
 
@@ -92,29 +90,25 @@ void ServersPanel::DrawServers() {
 
         widgets::StyledPanel* server_panel = new widgets::StyledPanel(this->joined_servers_panel);
         server_panel->SetMinSize(wxSize(-1, 30));
+        server_panel->SetMaxSize(wxSize(-1, 30));
 
         widgets::Button* start_server_button = new widgets::Button(server_panel, "Enter Server", [this, &server](wxMouseEvent& event){ });
         start_server_button->SetMinSize(wxSize(-1, 30));
+        start_server_button->SetMaxSize(wxSize(-1, 30));
 
         wxBoxSizer* button_sizer = new wxBoxSizer(wxHORIZONTAL);
 
         std::string joined_server_text_string = std::string(server_ip_address_parsed) + "   " + std::to_string(server_id);
 
-        wxStaticText* joined_server_text = new wxStaticText(server_panel, wxID_ANY, joined_server_text_string);
+        wxStaticText* joined_server_text = new wxStaticText(server_panel, wxID_ANY, wxString(joined_server_text_string));
 
-        button_sizer->Add(joined_server_text, 4, wxEXPAND | wxALIGN_CENTER_VERTICAL | wxALL);
-        button_sizer->AddStretchSpacer(10);
-        button_sizer->Add(start_server_button, 4, wxEXPAND | wxALIGN_CENTER_VERTICAL | wxALL);
-
-        button_alignment_sizer->AddStretchSpacer(1);
-        button_alignment_sizer->Add(server_panel, 4, wxEXPAND);
-        button_alignment_sizer->AddStretchSpacer(1);
+        button_sizer->Add(joined_server_text, 4, wxALIGN_CENTER_VERTICAL | wxLEFT, 10);
+        button_sizer->AddStretchSpacer(1);
+        button_sizer->Add(start_server_button, 4, wxALIGN_CENTER_VERTICAL);
 
         server_panel->SetSizer(button_sizer);
 
-        v_sizer->Add(button_alignment_sizer, 0, wxEXPAND | wxALL, 10);
-
-        v_sizer->AddStretchSpacer(1);
+        v_sizer->Add(server_panel, 4, wxTOP | wxBOTTOM | wxEXPAND, 5);
     }
 
     this->joined_servers_panel->GetParent()->Layout();
@@ -163,7 +157,7 @@ ServersPanel::AddServerPopupMenu::AddServerPopupMenu(wxWindow* parent, wxPoint p
 
     wxBoxSizer* sizer = new wxBoxSizer(wxVERTICAL);
     sizer->Add(server_code_input, 0, wxALIGN_CENTER | wxALL, 10);
-    sizer->Add(add_server_button, 0, wxALIGN_CENTER | wxALL | wxEXPAND | wxEXPAND, 10);
+    sizer->Add(add_server_button, 0, wxALIGN_CENTER | wxALL | wxEXPAND, 10);
     sizer->Add(new wxButton(this, wxID_CANCEL, "Cancel"), 0, wxALIGN_CENTER | wxALL, 10);
     SetSizerAndFit(sizer);
 }
@@ -171,28 +165,21 @@ ServersPanel::AddServerPopupMenu::AddServerPopupMenu(wxWindow* parent, wxPoint p
 ServersPanel::ServersPanel(wxPanel* parent_panel) : wxPanel(parent_panel) {
     widgets::Button* add_server_button = new widgets::Button(this, "Add Server", [this](wxMouseEvent& event) { this->OpenAddServerPopupMenu(event, this); } );
     add_server_button->SetMinSize(wxSize(-1, 40));
-
-    wxBoxSizer* add_server_button_sizer = new wxBoxSizer(wxHORIZONTAL);
-
-    add_server_button_sizer->AddStretchSpacer(1);
-    add_server_button_sizer->Add(add_server_button, 4, wxEXPAND);
-    add_server_button_sizer->AddStretchSpacer(1);
+    add_server_button->SetMaxSize(wxSize(-1, 40));
 
     this->joined_servers_panel = new wxPanel(this);
 
     wxBoxSizer* main_vert_sizer = new wxBoxSizer(wxVERTICAL);
+    wxBoxSizer* main_sizer_margin = new wxBoxSizer(wxHORIZONTAL);
 
-    main_vert_sizer->AddStretchSpacer(1);
+    main_vert_sizer->Add(this->joined_servers_panel, 4, wxTOP | wxBOTTOM | wxALIGN_CENTER_HORIZONTAL | wxEXPAND, 10);
+    main_vert_sizer->Add(add_server_button, 4, wxALIGN_CENTER_HORIZONTAL | wxTOP | wxBOTTOM | wxEXPAND, 10);
 
-    main_vert_sizer->Add(this->joined_servers_panel, 4, wxEXPAND);
+    main_sizer_margin->AddStretchSpacer(2);
+    main_sizer_margin->Add(main_vert_sizer, 10, wxEXPAND);
+    main_sizer_margin->AddStretchSpacer(2);
 
-    main_vert_sizer->AddStretchSpacer(1);
-
-    main_vert_sizer->Add(add_server_button_sizer, 4, wxEXPAND);
-
-    main_vert_sizer->AddStretchSpacer(1);
-
-    this->SetSizer(main_vert_sizer);
+    this->SetSizer(main_sizer_margin);
 }
 
 void ServersPanel::OpenAddServerPopupMenu(wxMouseEvent& event, wxWindow* parent) {
