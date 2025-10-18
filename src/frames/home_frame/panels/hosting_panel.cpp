@@ -4,6 +4,8 @@
 #include <functional>
 #include <string>
 #include <vector>
+#include <wx/event.h>
+#include <wx/sizer.h>
 #include <wx/wx.h>
 #include "../../../main.hpp"
 #include "../../../utils/net/net.hpp"
@@ -21,8 +23,30 @@ frames::home_frame::panels::HostingPanel::HostingPanel(wxPanel* parent_panel) : 
 
     this->hosted_servers_panel = new wxPanel(this);
 
-    main_sizer->Add(this->hosted_servers_panel, 4, wxTOP | wxBOTTOM | wxALIGN_CENTER_HORIZONTAL | wxEXPAND, 10);
-    main_sizer->Add(create_new_server_button, 4, wxALIGN_CENTER_HORIZONTAL | wxTOP | wxBOTTOM | wxEXPAND, 10);
+    wxBoxSizer* manage_all_servers_sizer = new wxBoxSizer(wxHORIZONTAL);
+
+    widgets::Button* start_all_servers_button = new widgets::Button(this, "Start All", [this](wxMouseEvent& event) {
+        for (auto &server : wxGetApp().GetLocalStorageDataManager()->GetSavedData().hosted_servers) {
+            server.StartServer();
+        }
+    });
+    start_all_servers_button->SetMinSize(wxSize(-1, 40));
+    start_all_servers_button->SetMaxSize(wxSize(-1, 40));
+
+    widgets::Button* stop_all_servers_button = new widgets::Button(this, "Stop All", [this](wxMouseEvent& event) {
+        for (auto &server : wxGetApp().GetLocalStorageDataManager()->GetSavedData().hosted_servers) {
+            server.StopServer();
+        }
+    });
+    stop_all_servers_button->SetMinSize(wxSize(-1, 40));
+    stop_all_servers_button->SetMaxSize(wxSize(-1, 40));
+
+    manage_all_servers_sizer->Add(start_all_servers_button, 1, wxEXPAND);
+    manage_all_servers_sizer->Add(stop_all_servers_button, 1, wxEXPAND);
+
+    main_sizer->Add(this->hosted_servers_panel, 0, wxTOP | wxBOTTOM | wxEXPAND, 10);
+    main_sizer->Add(manage_all_servers_sizer, 0, wxBOTTOM | wxEXPAND, 10);
+    main_sizer->Add(create_new_server_button, 0, wxTOP | wxBOTTOM | wxEXPAND, 10);
 
     main_sizer_margin->AddStretchSpacer(2);
     main_sizer_margin->Add(main_sizer, 10, wxEXPAND);
@@ -57,7 +81,7 @@ void frames::home_frame::panels::HostingPanel::DrawServers() {
         server_panel->SetMinSize(wxSize(-1, 30));
         server_panel->SetMaxSize(wxSize(-1, 30));
 
-        widgets::Button* start_server_button = new widgets::Button(server_panel, "Start Server", [this, &server](wxMouseEvent& event){ server.StartServer(); });
+        widgets::Button* start_server_button = new widgets::Button(server_panel, server.GetServerStatus() == objects::RUNNING ? "Stop Server" : "Start Server", [this, &server](wxMouseEvent& event){ server.GetServerStatus() == objects::RUNNING ? server.StopServer() : server.StartServer(); });
         start_server_button->SetMinSize(wxSize(-1, 30));
         start_server_button->SetMaxSize(wxSize(-1, 30));
 

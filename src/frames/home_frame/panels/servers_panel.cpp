@@ -8,6 +8,7 @@
 #include <string>
 #include <sys/socket.h>
 #include <unistd.h>
+#include <wx/utils.h>
 #include <wx/wx.h>
 #include "../../../utils/net/net.hpp"
 #include "../../../widgets/widgets.hpp"
@@ -92,7 +93,12 @@ void ServersPanel::DrawServers() {
         server_panel->SetMinSize(wxSize(-1, 30));
         server_panel->SetMaxSize(wxSize(-1, 30));
 
-        widgets::Button* start_server_button = new widgets::Button(server_panel, "Enter Server", [this, &server](wxMouseEvent& event){ });
+        widgets::Button* start_server_button = new widgets::Button(server_panel, "Enter Server", [this, &server](wxMouseEvent& event){
+            frames::ChatRoomFrame* chat_room_frame = new frames::ChatRoomFrame(server.GetServerIpAddress(), server.GetServerId());
+            chat_room_frame->Show(true);
+
+            wxGetApp().AddChatRoomFrame(chat_room_frame);
+        });
         start_server_button->SetMinSize(wxSize(-1, 30));
         start_server_button->SetMaxSize(wxSize(-1, 30));
 
@@ -157,7 +163,7 @@ ServersPanel::AddServerPopupMenu::AddServerPopupMenu(wxWindow* parent, wxPoint p
 
     wxBoxSizer* sizer = new wxBoxSizer(wxVERTICAL);
     sizer->Add(server_code_input, 0, wxALIGN_CENTER | wxALL, 10);
-    sizer->Add(add_server_button, 0, wxALIGN_CENTER | wxALL | wxEXPAND, 10);
+    sizer->Add(add_server_button, 0, wxALL | wxEXPAND, 10);
     sizer->Add(new wxButton(this, wxID_CANCEL, "Cancel"), 0, wxALIGN_CENTER | wxALL, 10);
     SetSizerAndFit(sizer);
 }
@@ -172,8 +178,8 @@ ServersPanel::ServersPanel(wxPanel* parent_panel) : wxPanel(parent_panel) {
     wxBoxSizer* main_vert_sizer = new wxBoxSizer(wxVERTICAL);
     wxBoxSizer* main_sizer_margin = new wxBoxSizer(wxHORIZONTAL);
 
-    main_vert_sizer->Add(this->joined_servers_panel, 4, wxTOP | wxBOTTOM | wxALIGN_CENTER_HORIZONTAL | wxEXPAND, 10);
-    main_vert_sizer->Add(add_server_button, 4, wxALIGN_CENTER_HORIZONTAL | wxTOP | wxBOTTOM | wxEXPAND, 10);
+    main_vert_sizer->Add(this->joined_servers_panel, 4, wxTOP | wxBOTTOM | wxEXPAND, 10);
+    main_vert_sizer->Add(add_server_button, 4, wxTOP | wxBOTTOM | wxEXPAND, 10);
 
     main_sizer_margin->AddStretchSpacer(2);
     main_sizer_margin->Add(main_vert_sizer, 10, wxEXPAND);

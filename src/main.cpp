@@ -4,7 +4,28 @@
 #include <wx/wx.h>
 #include "frames/frames.hpp"
 #include "objects/objects.hpp"
+#include "swift_net.h"
 #include "main.hpp"
+
+void Application::AddChatRoomFrame(frames::ChatRoomFrame* frame) {
+    this->chat_room_frames.push_back(frame);
+}
+
+std::vector<frames::ChatRoomFrame*>* Application::GetChatRoomFrames() {
+    return &this->chat_room_frames;
+}
+
+frames::ChatRoomFrame* Application::GetChatRoomFrameById(const uint16_t server_id) {
+    for (auto server : *this->GetChatRoomFrames()) {
+        std::cout << server->GetServerId() << " : " << server_id << std::endl;
+
+        if (server->GetServerId() == server_id) {
+            return server;
+        }
+    }
+
+    return nullptr;
+}
 
 Application::Application() {
     this->home_frame = new frames::HomeFrame();
@@ -16,6 +37,8 @@ Application::~Application() {
     if (local_storage_data_manager != nullptr) {
         delete local_storage_data_manager;
     }
+
+    swiftnet_cleanup();
 }
 
 frames::HomeFrame* Application::GetHomeFrame() {

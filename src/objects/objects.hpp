@@ -54,6 +54,11 @@ namespace objects {
         } JoinedServerRow;
 
         typedef struct {
+            uint16_t id;
+            char name[20];
+        } ServerChatChannelRow;
+
+        typedef struct {
             const char* statement_name;
             const char* query;
         } Statement;
@@ -71,12 +76,14 @@ namespace objects {
 
         std::vector<HostedServerRow>* SelectHostedServers();
         std::vector<JoinedServerRow>* SelectJoinedServers();
+        std::vector<ServerChatChannelRow>* SelectServerChatChannels(const uint16_t server_id);
 
         std::unordered_map<const char*, sqlite3_stmt*>& GetStatements();
 
         int InsertHostedServer(const uint16_t server_id);
         int InsertHostedServerUser(const uint16_t server_id, in_addr ip_address);
         int InsertJoinedServer(const uint16_t server_id, in_addr ip_address);
+        int InsertServerChatChannel(const char* name, const uint16_t server_id);
     private:
         sqlite3* database_connection;
         std::unordered_map<const char*, sqlite3_stmt*> statements;

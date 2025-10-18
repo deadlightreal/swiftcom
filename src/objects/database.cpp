@@ -39,8 +39,10 @@ void objects::Database::PrepareStatements() {
         (Statement){.statement_name = "insert_hosted_server_user", .query = "INSERT INTO hosted_server_users (ip_address, server_id) VALUES ($1, $2);"},
         (Statement){.statement_name = "insert_joined_server", .query = "INSERT INTO joined_servers (ip_address, server_id) VALUES ($1, $2);"},
         (Statement){.statement_name = "insert_hosted_server", .query = "INSERT INTO hosted_servers (id) VALUES ($1);"},
+        (Statement){.statement_name = "insert_server_chat_channel", .query = "INSERT INTO server_chat_channels (name, hosted_server_id) VALUES ($1, $2);"},
         (Statement){.statement_name = "select_hosted_servers", .query = "SELECT id FROM hosted_servers;"},
         (Statement){.statement_name = "select_joined_servers", .query = "SELECT ip_address, server_id FROM joined_servers;"},
+        (Statement){.statement_name = "select_server_chat_channels", .query = "SELECT id, name FROM server_chat_channels WHERE hosted_server_id = $1;"},
     };
 
     for(const auto& statement : statements) {
@@ -64,7 +66,8 @@ void objects::Database::InitializeDatabaseTables() {
     const char* queries[] = {
         "CREATE TABLE IF NOT EXISTS hosted_server_users (id INTEGER PRIMARY KEY AUTOINCREMENT, ip_address INTEGER UNIQUE NOT NULL, server_id INTEGER NOT NULL);",
         "CREATE TABLE IF NOT EXISTS hosted_servers (id INTEGER PRIMARY KEY NOT NULL);",
-        "CREATE TABLE IF NOT EXISTS joined_servers (id INTEGER PRIMARY KEY AUTOINCREMENT, ip_address INTEGER NOT NULL, server_id INTEGER NOT NULL);"
+        "CREATE TABLE IF NOT EXISTS joined_servers (id INTEGER PRIMARY KEY AUTOINCREMENT, ip_address INTEGER NOT NULL, server_id INTEGER NOT NULL);",
+        "CREATE TABLE IF NOT EXISTS server_chat_channels (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT NOT NULL, hosted_server_id INTEGER NOT NULL)"
     };
 
     for(const auto& query : queries) {
@@ -110,6 +113,23 @@ int objects::Database::InsertJoinedServer(const uint16_t server_id, in_addr ip_a
     return 0;
 }
 
+int objects::Database::InsertServerChatChannel(const char* name, const uint16_t server_id) {
+    sqlite3_stmt* stmt = this->GetStatement("insert_server_chat_channel");
+
+    sqlite3_bind_text(stmt, 1, name, -1, SQLITE_TRANSIENT);
+    sqlite3_bind_int(stmt, 2, server_id);
+
+    int result = sqlite3_step(stmt);
+    if (result != SQLITE_DONE) {
+        std::cerr << "Failed to insert insert_joined_server" << std::endl;
+        return -1;
+    }
+
+    sqlite3_reset(stmt);
+
+    return 0;
+}
+
 int objects::Database::InsertHostedServer(const uint16_t server_id) {
     sqlite3_stmt* stmt = this->GetStatement("insert_hosted_server");
 
@@ -136,6 +156,37 @@ std::vector<objects::Database::JoinedServerRow>* objects::Database::SelectJoined
         uint16_t server_id = sqlite3_column_int(stmt, 1);
 
         result->push_back((objects::Database::JoinedServerRow){.server_id = server_id, .ip_address = server_ip_address});
+    }
+
+    sqlite3_reset(stmt);
+
+    return result;
+}
+
+std::vector<objects::Database::ServerChatChannelRow>* objects::Database::SelectServerChatChannels(const uint16_t server_id) {
+    sqlite3_stmt* stmt = this->GetStatement("select_server_chat_channels");
+
+    sqlite3_bind_int(stmt, 1, server_id);
+
+    std::vector<objects::Database::ServerChatChannelRow>* result = new std::vector<objects::Database::ServerChatChannelRow>();
+
+    while (sqlite3_step(stmt) == SQLITE_ROW) {
+        uint16_t id = sqlite3_column_int(stmt, 0);
+
+        auto row = (objects::Database::ServerChatChannelRow){
+            .id = id,
+        };
+
+        const unsigned char* text = sqlite3_column_text(stmt, 1);
+
+        if (text != NULL) {
+            strncpy(row.name, (const char*)text, sizeof(row.name) - 1);
+            row.name[sizeof(row.name) - 1] = '\0';
+        } else {
+            row.name[0] = '\0';
+        }
+
+        result->push_back(row);
     }
 
     sqlite3_reset(stmt);
