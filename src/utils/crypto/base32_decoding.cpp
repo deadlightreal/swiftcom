@@ -26,18 +26,18 @@ std::vector<uint8_t> utils::crypto::base32_decode(const std::string& input) {
 
     std::vector<uint8_t> out;
     uint32_t buffer = 0;
-    int bitsLeft = 0;
+    int bits_left = 0;
 
     for (char c : input) {
         int8_t val = lookup[static_cast<uint8_t>(c)];
         if (val < 0) continue;
 
         buffer = (buffer << 5) | val;
-        bitsLeft += 5;
+        bits_left += 5;
 
-        if (bitsLeft >= 8) {
-            bitsLeft -= 8;
-            out.push_back((buffer >> bitsLeft) & 0xFF);
+        if (bits_left >= 8) {
+            bits_left -= 8;
+            out.push_back((buffer >> bits_left) & 0xFF);
         }
     }
 

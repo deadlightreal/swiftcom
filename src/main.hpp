@@ -17,13 +17,20 @@ typedef enum {
 
 typedef enum {
     JOIN_SERVER,
-    LOAD_SERVER_INFORMATION
+    LOAD_SERVER_INFORMATION,
+    LOAD_CHANNEL_DATA
 } RequestType;
 
 typedef struct {
     RequestType request_type;
 } RequestInfo;
 
+// Requests
+typedef struct {
+    uint32_t channel_id;
+} LoadChannelDataRequest;
+
+// Responses
 typedef struct {
     RequestStatus status;
 } JoinServerResponse;
@@ -34,24 +41,30 @@ typedef struct {
     objects::Database::ServerChatChannelRow server_chat_channels[];
 } LoadServerInformationResponse;
 
+typedef struct {
+    RequestStatus status;
+    uint32_t channel_messages_len;
+} LoadChannelDataResponse;
+
 class Application : public wxApp
 {
 public:
-    virtual bool OnInit();
-
     Application();
     ~Application();
 
-    objects::LocalStorageDataManager* GetLocalStorageDataManager();
-
-    frames::HomeFrame* GetHomeFrame();
+    virtual bool OnInit();
 
     void AddChatRoomFrame(frames::ChatRoomFrame* frame);
+
+    objects::LocalStorageDataManager* GetLocalStorageDataManager();
+    frames::HomeFrame* GetHomeFrame();
     std::vector<frames::ChatRoomFrame*>* GetChatRoomFrames();
     frames::ChatRoomFrame* GetChatRoomFrameById(const uint16_t server_id);
 private:
     frames::HomeFrame* home_frame;
+
     objects::LocalStorageDataManager* local_storage_data_manager;
+
     std::vector<frames::ChatRoomFrame*> chat_room_frames;
 };
 

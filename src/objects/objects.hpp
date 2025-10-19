@@ -15,20 +15,33 @@ namespace objects {
         RUNNING
     } HostedServerStatus;
 
+    typedef struct {
+        SwiftNetClientAddrData addr_data;
+        uint32_t user_id;
+    } ConnectedUser;
+
     class HostedServer {
     public:
         HostedServer(uint16_t id);
+        ~HostedServer();
 
         void StartServer();
         void StopServer();
 
+        void AddConnectedUser(const ConnectedUser connected_user);
+
+        std::vector<ConnectedUser>* GetConnectedUsers();
         SwiftNetServer* GetServer();
         uint16_t GetServerId();
         HostedServerStatus GetServerStatus();
     private:
         uint16_t id;
+
         HostedServerStatus status = STOPPED;
+
         SwiftNetServer* server = nullptr;
+
+        std::vector<ConnectedUser> connected_users;
     };
 
     class JoinedServer {
@@ -54,6 +67,13 @@ namespace objects {
         } JoinedServerRow;
 
         typedef struct {
+            uint32_t id;
+            const char* message;
+            uint32_t message_length;
+            uint32_t sender_id;
+        } ChannelMessageRow;
+
+        typedef struct {
             uint16_t id;
             char name[20];
         } ServerChatChannelRow;
@@ -64,26 +84,29 @@ namespace objects {
         } Statement;
 
         Database();
-
-        sqlite3* GetDatabaseConnection();
+        ~Database();
 
         void OpenDatabase();
         void InitializeDatabaseTables();
-
         void PrepareStatements();
-
-        sqlite3_stmt* GetStatement(const char* statement_name);
 
         std::vector<HostedServerRow>* SelectHostedServers();
         std::vector<JoinedServerRow>* SelectJoinedServers();
         std::vector<ServerChatChannelRow>* SelectServerChatChannels(const uint16_t server_id);
+        std::vector<ChannelMessageRow>* SelectChannelMessages(const uint32_t channel_id);
 
-        std::unordered_map<const char*, sqlite3_stmt*>& GetStatements();
+        uint32_t SelectUserId(const in_addr_t ip_address, const uint32_t server_id);
 
         int InsertHostedServer(const uint16_t server_id);
         int InsertHostedServerUser(const uint16_t server_id, in_addr ip_address);
         int InsertJoinedServer(const uint16_t server_id, in_addr ip_address);
         int InsertServerChatChannel(const char* name, const uint16_t server_id);
+        int InsertChannelMessage(const char* message, const uint32_t channel_id);
+
+        sqlite3_stmt* GetStatement(const char* statement_name);
+
+        std::unordered_map<const char*, sqlite3_stmt*>& GetStatements();
+        sqlite3* GetDatabaseConnection();
     private:
         sqlite3* database_connection;
         std::unordered_map<const char*, sqlite3_stmt*> statements;
@@ -101,9 +124,11 @@ namespace objects {
         typedef LocalStorageSavedData LocalStorageSavedData;
 
         LocalStorageDataManager();
+        ~LocalStorageDataManager();
 
-        void save_data();
-        void load_data();
+        void SaveData();
+        void LoadData();
+
         void InsertHostedServer(const uint16_t server_id);
         HostedServer* GetServerById(const uint16_t server_id);
 
@@ -112,12 +137,7 @@ namespace objects {
         LocalStorageSavedData& GetSavedData();
     private:
         LocalStorageSavedData saved_data;
-        Database* database;
-    };
 
-    class ServerHostingManager {
-    public:
-        ServerHostingManager();
-    private:
+        Database* database;
     };
 }

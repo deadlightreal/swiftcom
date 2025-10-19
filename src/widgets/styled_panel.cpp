@@ -1,12 +1,18 @@
 #include "widgets.hpp"
 #include <sys/socket.h>
 
-widgets::StyledPanel::StyledPanel(wxWindow* parent) : wxPanel(parent) {
+using namespace widgets;
+
+StyledPanel::StyledPanel(wxWindow* parent) : wxPanel(parent) {
     SetBackgroundStyle(wxBG_STYLE_PAINT);
     Bind(wxEVT_PAINT, &StyledPanel::OnPaint, this);
 }
 
-void widgets::StyledPanel::OnPaint(wxPaintEvent&) {
+StyledPanel::~StyledPanel() {
+
+}
+
+void StyledPanel::OnPaint(wxPaintEvent&) {
     wxPaintDC dc(this);
     wxSize size = GetClientSize();
 

@@ -13,20 +13,20 @@ std::string utils::crypto::base32_encode(const std::vector<uint8_t> data) {
     out.reserve((data.size() * 8 + 4) / 5);
 
     uint32_t buffer = 0;
-    int bitsLeft = 0;
+    int bits_left = 0;
 
     for (size_t i = 0; i < data.size(); ++i) {
         buffer = (buffer << 8) | data[i];
-        bitsLeft += 8;
+        bits_left += 8;
 
-        while (bitsLeft >= 5) {
-            out.push_back(alphabet[(buffer >> (bitsLeft - 5)) & 0x1F]);
-            bitsLeft -= 5;
+        while (bits_left >= 5) {
+            out.push_back(alphabet[(buffer >> (bits_left - 5)) & 0x1F]);
+            bits_left -= 5;
         }
     }
 
-    if (bitsLeft > 0) {
-        out.push_back(alphabet[(buffer << (5 - bitsLeft)) & 0x1F]);
+    if (bits_left > 0) {
+        out.push_back(alphabet[(buffer << (5 - bits_left)) & 0x1F]);
     }
 
     return out;

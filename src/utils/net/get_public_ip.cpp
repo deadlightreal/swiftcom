@@ -14,7 +14,6 @@ in_addr utils::net::get_public_ip() {
     const char* host = "api.ipify.org";
     const char* port = "80";
 
-    // Resolve host
     addrinfo hints{};
     addrinfo* res;
     hints.ai_family = AF_UNSPEC;
@@ -25,7 +24,6 @@ in_addr utils::net::get_public_ip() {
         exit(EXIT_FAILURE);
     }
 
-    // Create socket
     int sock = socket(res->ai_family, res->ai_socktype, res->ai_protocol);
     if (sock < 0) {
         perror("socket");
@@ -33,7 +31,6 @@ in_addr utils::net::get_public_ip() {
         exit(EXIT_FAILURE);
     }
 
-    // Connect
     if (connect(sock, res->ai_addr, res->ai_addrlen) < 0) {
         perror("connect");
         close(sock);
@@ -42,7 +39,6 @@ in_addr utils::net::get_public_ip() {
     }
     freeaddrinfo(res);
 
-    // Send HTTP GET request
     std::string request = 
         "GET / HTTP/1.1\r\n"
         "Host: api.ipify.org\r\n"
@@ -50,7 +46,6 @@ in_addr utils::net::get_public_ip() {
 
     send(sock, request.c_str(), request.size(), 0);
 
-    // Receive response
     char buffer[4096];
     std::string response;
     ssize_t bytes;
@@ -61,7 +56,6 @@ in_addr utils::net::get_public_ip() {
 
     close(sock);
 
-    // Extract body (everything after the first blank line)
     size_t pos = response.find("\r\n\r\n");
     if (pos != std::string::npos) {
         std::string body = response.substr(pos + 4);

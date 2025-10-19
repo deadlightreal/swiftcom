@@ -7,6 +7,12 @@
 },
 {
   "directory": "/Users/admin/Desktop/raw_sock_network_example/build",
+  "command": "/usr/bin/c++ -DWXUSINGDLL -D_FILE_OFFSET_BITS=64 -D__WXMAC__ -D__WXOSX_COCOA__ -D__WXOSX__ -DwxDEBUG_LEVEL=0 -I/Users/admin/vcpkg/installed/arm64-osx/include -isystem /Users/admin/vcpkg/installed/arm64-osx/lib/wx/include/osx_cocoa-unicode-static-3.3 -isystem /Users/admin/vcpkg/installed/arm64-osx/include/wx-3.3 -isystem /Users/admin/vcpkg/installed/arm64-osx/include/nanosvg -g -std=gnu++20 -arch arm64 -mmacosx-version-min=14.0 -o CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/frames/chat_room_frame/chat_panel.cpp.o -c /Users/admin/Desktop/raw_sock_network_example/src/frames/chat_room_frame/chat_panel.cpp",
+  "file": "/Users/admin/Desktop/raw_sock_network_example/src/frames/chat_room_frame/chat_panel.cpp",
+  "output": "CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/frames/chat_room_frame/chat_panel.cpp.o"
+},
+{
+  "directory": "/Users/admin/Desktop/raw_sock_network_example/build",
   "command": "/usr/bin/c++ -DWXUSINGDLL -D_FILE_OFFSET_BITS=64 -D__WXMAC__ -D__WXOSX_COCOA__ -D__WXOSX__ -DwxDEBUG_LEVEL=0 -I/Users/admin/vcpkg/installed/arm64-osx/include -isystem /Users/admin/vcpkg/installed/arm64-osx/lib/wx/include/osx_cocoa-unicode-static-3.3 -isystem /Users/admin/vcpkg/installed/arm64-osx/include/wx-3.3 -isystem /Users/admin/vcpkg/installed/arm64-osx/include/nanosvg -g -std=gnu++20 -arch arm64 -mmacosx-version-min=14.0 -o CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/frames/chat_room_frame/chat_room_frame.cpp.o -c /Users/admin/Desktop/raw_sock_network_example/src/frames/chat_room_frame/chat_room_frame.cpp",
   "file": "/Users/admin/Desktop/raw_sock_network_example/src/frames/chat_room_frame/chat_room_frame.cpp",
   "output": "CMakeFiles/main.dir/Users/admin/Desktop/raw_sock_network_example/src/frames/chat_room_frame/chat_room_frame.cpp.o"

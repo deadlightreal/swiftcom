@@ -7,26 +7,6 @@
 #include "swift_net.h"
 #include "main.hpp"
 
-void Application::AddChatRoomFrame(frames::ChatRoomFrame* frame) {
-    this->chat_room_frames.push_back(frame);
-}
-
-std::vector<frames::ChatRoomFrame*>* Application::GetChatRoomFrames() {
-    return &this->chat_room_frames;
-}
-
-frames::ChatRoomFrame* Application::GetChatRoomFrameById(const uint16_t server_id) {
-    for (auto server : *this->GetChatRoomFrames()) {
-        std::cout << server->GetServerId() << " : " << server_id << std::endl;
-
-        if (server->GetServerId() == server_id) {
-            return server;
-        }
-    }
-
-    return nullptr;
-}
-
 Application::Application() {
     this->home_frame = new frames::HomeFrame();
 }
@@ -39,14 +19,6 @@ Application::~Application() {
     }
 
     swiftnet_cleanup();
-}
-
-frames::HomeFrame* Application::GetHomeFrame() {
-    return this->home_frame;
-}
-
-objects::LocalStorageDataManager* Application::GetLocalStorageDataManager() {
-    return this->local_storage_data_manager;
 }
 
 bool Application::OnInit() {
@@ -65,6 +37,34 @@ bool Application::OnInit() {
 
     home_frame->Show(true);
     return true;
+}
+
+void Application::AddChatRoomFrame(frames::ChatRoomFrame* frame) {
+    this->chat_room_frames.push_back(frame);
+}
+
+frames::ChatRoomFrame* Application::GetChatRoomFrameById(const uint16_t server_id) {
+    for (auto server : *this->GetChatRoomFrames()) {
+        std::cout << server->GetServerId() << " : " << server_id << std::endl;
+
+        if (server->GetServerId() == server_id) {
+            return server;
+        }
+    }
+
+    return nullptr;
+}
+
+std::vector<frames::ChatRoomFrame*>* Application::GetChatRoomFrames() {
+    return &this->chat_room_frames;
+}
+
+frames::HomeFrame* Application::GetHomeFrame() {
+    return this->home_frame;
+}
+
+objects::LocalStorageDataManager* Application::GetLocalStorageDataManager() {
+    return this->local_storage_data_manager;
 }
 
 wxIMPLEMENT_APP(Application);

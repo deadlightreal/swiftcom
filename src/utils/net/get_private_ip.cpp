@@ -8,7 +8,7 @@
 #include <sys/socket.h>
 #include <net/if.h>
 
-bool is_private_ip(const std::string& ip) {
+static bool is_private_ip(const std::string& ip) {
     return ip.find("192.168.") == 0 ||
            ip.find("10.") == 0 ||
            (ip.find("172.") == 0 && std::stoi(ip.substr(4, ip.find('.', 5) - 4)) >= 16 && std::stoi(ip.substr(4, ip.find('.', 5) - 4)) <= 31);
@@ -25,7 +25,6 @@ in_addr utils::net::get_private_ip() {
     for (ifa = interfaces; ifa != nullptr; ifa = ifa->ifa_next) {
         if (ifa->ifa_addr == nullptr) continue;
 
-        // Only interested in IPv4 addresses
         if (ifa->ifa_addr->sa_family == AF_INET &&
             (ifa->ifa_flags & IFF_LOOPBACK) == 0) {
 

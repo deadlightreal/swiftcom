@@ -9,6 +9,7 @@ namespace frames::home_frame::panels {
     class HostingPanel : public wxPanel {
     public:
         HostingPanel(wxPanel* parent_panel);
+        ~HostingPanel();
 
         void DrawServers();
     private:
@@ -21,21 +22,23 @@ namespace frames::home_frame::panels {
     public:
         class AddServerPopupMenu : public wxDialog {
         public:
-            void RequestServerExistsConfirmation(const char* ip_address, const uint16_t server_id);
-
             enum AddServerReturnCode {
                 SUCCESS,
                 INVALID_LENGTH
             };
 
             AddServerPopupMenu(wxWindow* parent, wxPoint pos);
+            ~AddServerPopupMenu();
+
+            void RequestServerExistsConfirmation(const char* ip_address, const uint16_t server_id);
 
             AddServerReturnCode AddServer(wxString input);
         };
 
-        void DrawServers();
-
         ServersPanel(wxPanel* parent_panel);
+        ~ServersPanel();
+
+        void DrawServers();
 
         void OpenAddServerPopupMenu(wxMouseEvent& event, wxWindow* parent);
     private:

@@ -13,7 +13,9 @@
 #include "panels.hpp"
 #include "../../../widgets/widgets.hpp"
 
-frames::home_frame::panels::HostingPanel::HostingPanel(wxPanel* parent_panel) : wxPanel(parent_panel) {
+using namespace frames::home_frame::panels;
+
+HostingPanel::HostingPanel(wxPanel* parent_panel) : wxPanel(parent_panel) {
     widgets::Button* create_new_server_button = new widgets::Button(this, "Create New Server", [this](wxMouseEvent& event) { this->CreateNewServer(event); });
     create_new_server_button->SetMinSize(wxSize(-1, 40));
     create_new_server_button->SetMaxSize(wxSize(-1, 40));
@@ -30,6 +32,7 @@ frames::home_frame::panels::HostingPanel::HostingPanel(wxPanel* parent_panel) : 
             server.StartServer();
         }
     });
+    
     start_all_servers_button->SetMinSize(wxSize(-1, 40));
     start_all_servers_button->SetMaxSize(wxSize(-1, 40));
 
@@ -38,6 +41,7 @@ frames::home_frame::panels::HostingPanel::HostingPanel(wxPanel* parent_panel) : 
             server.StopServer();
         }
     });
+    
     stop_all_servers_button->SetMinSize(wxSize(-1, 40));
     stop_all_servers_button->SetMaxSize(wxSize(-1, 40));
 
@@ -55,7 +59,11 @@ frames::home_frame::panels::HostingPanel::HostingPanel(wxPanel* parent_panel) : 
     this->SetSizer(main_sizer_margin);
 }
 
-void frames::home_frame::panels::HostingPanel::DrawServers() {
+HostingPanel::~HostingPanel() {
+
+}
+
+void HostingPanel::DrawServers() {
     this->hosted_servers_panel->DestroyChildren();
 
     wxBoxSizer* v_sizer = new wxBoxSizer(wxVERTICAL);
@@ -103,7 +111,7 @@ void frames::home_frame::panels::HostingPanel::DrawServers() {
     this->hosted_servers_panel->GetParent()->SendSizeEvent();
 }
 
-void frames::home_frame::panels::HostingPanel::CreateNewServer(wxMouseEvent&) {
+void HostingPanel::CreateNewServer(wxMouseEvent&) {
     uint16_t random_generated_id = rand();
 
     wxGetApp().GetLocalStorageDataManager()->InsertHostedServer(random_generated_id);
